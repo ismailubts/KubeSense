@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-02-10
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-As KubeSentiment scales across multiple environments and integrates with various external services, we need a robust secrets management solution. Current challenges include:
+As KubeSense scales across multiple environments and integrates with various external services, we need a robust secrets management solution. Current challenges include:
 
 1. **Scattered secrets**: Secrets stored in environment variables, Kubernetes secrets, config files
 2. **No rotation**: Static credentials increase security risk over time
@@ -185,7 +185,7 @@ listener "tcp" {
   tls_key_file  = "/vault/tls/tls.key"
 }
 
-api_addr = "https://vault.kubesentiment.svc.cluster.local:8200"
+api_addr = "https://vault.KubeSense.svc.cluster.local:8200"
 cluster_addr = "https://vault-0.vault-internal:8201"
 
 ui = true
@@ -243,22 +243,22 @@ class VaultClient:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kubesentiment-api
+  name: KubeSense-api
   annotations:
     vault.hashicorp.com/agent-inject: "true"
-    vault.hashicorp.com/role: "kubesentiment"
-    vault.hashicorp.com/agent-inject-secret-config: "secret/data/kubesentiment/config"
+    vault.hashicorp.com/role: "KubeSense"
+    vault.hashicorp.com/agent-inject-secret-config: "secret/data/KubeSense/config"
     vault.hashicorp.com/agent-inject-template-config: |
-      {{- with secret "secret/data/kubesentiment/config" -}}
+      {{- with secret "secret/data/KubeSense/config" -}}
       export REDIS_PASSWORD="{{ .Data.data.redis_password }}"
       export KAFKA_PASSWORD="{{ .Data.data.kafka_password }}"
       export MODEL_API_KEY="{{ .Data.data.model_api_key }}"
       {{- end }}
 spec:
-  serviceAccountName: kubesentiment
+  serviceAccountName: KubeSense
   containers:
   - name: api
-    image: kubesentiment:latest
+    image: KubeSense:latest
     command: ["/bin/sh", "-c"]
     args: ["source /vault/secrets/config && python -m app.main"]
 ```
@@ -269,13 +269,13 @@ spec:
 # Configure Vault for dynamic PostgreSQL credentials
 vault write database/config/postgresql \
     plugin_name=postgresql-database-plugin \
-    allowed_roles="kubesentiment-readonly,kubesentiment-readwrite" \
-    connection_url="postgresql://{{username}}:{{password}}@postgres:5432/kubesentiment" \
+    allowed_roles="KubeSense-readonly,KubeSense-readwrite" \
+    connection_url="postgresql://{{username}}:{{password}}@postgres:5432/KubeSense" \
     username="vault" \
     password="vault-password"
 
 # Create role for read-write access
-vault write database/roles/kubesentiment-readwrite \
+vault write database/roles/KubeSense-readwrite \
     db_name=postgresql \
     creation_statements="CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}'; \
     GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO \"{{name}}\";" \
@@ -297,7 +297,7 @@ async def check_and_rotate_secrets():
 
             # Check database credential expiration
             if db_creds_expiration - time.time() < 600:  # 10 minutes
-                new_creds = vault_client.get_database_credentials('kubesentiment-readwrite')
+                new_creds = vault_client.get_database_credentials('KubeSense-readwrite')
                 await update_database_connection(new_creds)
 
             await asyncio.sleep(60)  # Check every minute
@@ -311,12 +311,12 @@ async def check_and_rotate_secrets():
 ### Vault Policies
 
 ```hcl
-# KubeSentiment API policy
-path "secret/data/kubesentiment/*" {
+# KubeSense API policy
+path "secret/data/KubeSense/*" {
   capabilities = ["read"]
 }
 
-path "database/creds/kubesentiment-readwrite" {
+path "database/creds/KubeSense-readwrite" {
   capabilities = ["read"]
 }
 

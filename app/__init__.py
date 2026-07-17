@@ -1,5 +1,5 @@
 """
-KubeSentiment — MLOps Sentiment Analysis Application
+KubeSense — MLOps Sentiment Analysis Application
 
 Cloud-native sentiment analysis microservice built with FastAPI and transformers.
 Maintained by Aismail <aismail@7kingscode.com>.

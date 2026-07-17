@@ -1,4 +1,4 @@
-# ⚠️ DEPRECATED - KubeSentiment Quick Reference Guide
+# ⚠️ DEPRECATED - KubeSense Quick Reference Guide
 
 > **Configuration content has been moved.** See **[docs/configuration/QUICK_START.md](docs/configuration/QUICK_START.md)** for configuration quick start.
 >
@@ -28,8 +28,8 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/aismail/KubeSentiment.git
-cd KubeSentiment
+git clone https://github.com/ismailubts/KubeSense.git
+cd KubeSense
 
 # Automated setup (recommended)
 python scripts/setup_dev_environment.py

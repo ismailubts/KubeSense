@@ -1,96 +1,87 @@
-# KubeSentiment
+# KubeSense
 
-**Cloud-native sentiment analysis for Kubernetes**
+### by Aismail
 
-[![CI](https://img.shields.io/badge/CI-passing-0ea5e9.svg)](https://github.com/aismail/KubeSentiment/actions)
-[![Version](https://img.shields.io/badge/version-1.0.0-38bdf8.svg)](https://github.com/aismail/KubeSentiment/releases)
+Production MLOps sentiment API — DistilBERT on FastAPI, ready for Kubernetes.
+
+[![CI](https://img.shields.io/badge/CI-passing-0ea5e9.svg)](https://github.com/ismailubts/KubeSense/actions)
+[![Version](https://img.shields.io/badge/version-1.0.0-38bdf8.svg)](https://github.com/ismailubts/KubeSense/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-22c55e.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-async-009688.svg)](https://fastapi.tiangolo.com/)
+[![Contact](https://img.shields.io/badge/contact-aismail%407kingscode.com-6366f1.svg)](mailto:aismail@7kingscode.com)
 
-Maintained by **Aismail** · [aismail@7kingscode.com](mailto:aismail@7kingscode.com) · [GitHub](https://github.com/aismail/KubeSentiment)
-
-KubeSentiment is a production-oriented MLOps microservice that serves DistilBERT-based sentiment inference through FastAPI. It is packaged for Kubernetes (Helm), ships with Redis caching and Kafka batch paths, and includes Prometheus/Grafana observability wiring.
+**Author:** [Aismail](https://github.com/ismailubts) · **Email:** [aismail@7kingscode.com](mailto:aismail@7kingscode.com) · **Repo:** [github.com/ismailubts/KubeSense](https://github.com/ismailubts/KubeSense)
 
 ---
 
-## What you get
+## Why this project
 
-| Area | Capability |
-|------|------------|
-| Inference | PyTorch (dev) and ONNX Runtime (prod), optional GPU |
-| API | Versioned REST (`/api/v1`), OpenAPI docs in debug mode |
-| Scale | HPA-ready Helm chart, async batch jobs, Kafka consumers |
-| Ops | Vault secrets, Terraform modules, chaos & benchmark suites |
-| Quality | Unit/integration tests, pre-commit hooks, structured logs |
+KubeSense is a cloud-native microservice for real-time and batch sentiment inference. It ships with ONNX-optimized models, Redis caching, Kafka async paths, Helm charts, Terraform modules, and a full observability stack (Prometheus, Grafana, OpenTelemetry).
+
+| Layer | What ships |
+|-------|------------|
+| Inference | PyTorch (dev) · ONNX Runtime (prod) · optional GPU |
+| API | Versioned REST · OpenAPI / Swagger in debug mode |
+| Scale | HPA Helm chart · async batch · Kafka consumers |
+| Ops | Vault · Terraform · chaos & benchmark suites |
+| Quality | Tests · pre-commit · structured logging |
 
 ---
 
-## Architecture (high level)
+## Architecture
 
 ```mermaid
 flowchart LR
   Clients -->|HTTP| Ingress
-  Ingress --> API[FastAPI Service]
+  Ingress --> API[FastAPI · Aismail]
   API --> Model[ONNX / PyTorch]
-  API --> Redis[(Redis Cache)]
+  API --> Redis[(Redis)]
   API --> Kafka[[Kafka]]
   API --> Prom[Prometheus]
   Prom --> Grafana
   Vault[(Vault)] -.-> API
 ```
 
-Details: [Architecture docs](docs/architecture.md) · [ADRs](docs/architecture/decisions/)
+More detail: [Architecture](docs/architecture.md) · [ADRs](docs/architecture/decisions/)
 
 ---
 
 ## Quick start
 
-### Prerequisites
-
-- Python 3.11+
-- Docker & Docker Compose
-- Optional: kubectl, Helm 3+, make
-
-### Clone & install
+**Needs:** Python 3.11+, Docker Compose (optional: kubectl, Helm, make)
 
 ```bash
-git clone https://github.com/aismail/KubeSentiment.git
-cd KubeSentiment
+git clone https://github.com/ismailubts/KubeSense.git
+cd KubeSense
 
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 source .venv/bin/activate
 
 make install-dev
-# or: pip install -r requirements.txt -r requirements-dev.txt -r requirements-test.txt
 ```
 
-### Run locally (Docker)
+**Docker:**
 
 ```bash
 docker-compose up --build
 ```
 
-### Run with uvicorn (mock-friendly local profile)
+**Local uvicorn (mock model):**
 
 ```bash
-# Windows PowerShell
+# PowerShell
 $env:MLOPS_PROFILE="local"
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### Try a prediction
-
-In debug/local mode the `/api/v1` prefix is omitted:
+**Sample call** (local/debug omits `/api/v1`):
 
 ```bash
 curl -X POST "http://localhost:8000/predict" \
   -H "Content-Type: application/json" \
   -d "{\"text\": \"This product exceeded my expectations!\"}"
 ```
-
-Example response:
 
 ```json
 {
@@ -103,11 +94,11 @@ Example response:
 }
 ```
 
-Interactive docs (debug mode): http://localhost:8000/docs
+Docs UI: http://localhost:8000/docs
 
 ---
 
-## API surface
+## API
 
 | Method | Path | Purpose |
 |--------|------|---------|
@@ -123,18 +114,19 @@ Interactive docs (debug mode): http://localhost:8000/docs
 
 ## Configuration
 
-Profile-based settings (ADR-009). Priority: profile defaults → `.env` → env vars → Vault.
+Profiles (ADR-009): `local` → `development` → `staging` → `production`.  
+Priority: profile defaults → `.env` → environment variables → Vault.
 
 ```bash
-export MLOPS_PROFILE=development   # local | development | staging | production
+export MLOPS_PROFILE=development
 export MLOPS_REDIS_ENABLED=true
 ```
 
-Guides: [Configuration quick start](docs/configuration/QUICK_START.md) · [Env reference](docs/configuration/ENVIRONMENT_VARIABLES.md)
+See [Configuration quick start](docs/configuration/QUICK_START.md) and [Environment variables](docs/configuration/ENVIRONMENT_VARIABLES.md).
 
 ---
 
-## Kubernetes
+## Deploy on Kubernetes
 
 ```bash
 helm upgrade --install mlops-sentiment ./helm/mlops-sentiment \
@@ -145,29 +137,27 @@ helm upgrade --install mlops-sentiment ./helm/mlops-sentiment \
   --set image.tag=latest
 ```
 
-Full stack quickstart: [docs/setup/QUICKSTART.md](docs/setup/QUICKSTART.md)
+Full guide: [docs/setup/QUICKSTART.md](docs/setup/QUICKSTART.md)
 
 ---
 
 ## Benchmarks & chaos
 
-- Benchmarking suite: `benchmarking/` — see [benchmarking/README.md](benchmarking/README.md)
-- Chaos experiments: `make chaos-test-suite` — see [chaos/README.md](chaos/README.md)
-
-Synthetic Kafka consumer snapshot (in-repo MockModel): ~105,700 msg/s for 1,000 messages.
+- `benchmarking/` — [benchmarking/README.md](benchmarking/README.md)
+- `make chaos-test-suite` — [chaos/README.md](chaos/README.md)
 
 ---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, linting (`make lint`), and PR conventions (Conventional Commits).
+Read [CONTRIBUTING.md](CONTRIBUTING.md). Use Conventional Commits; run `make lint` and `make test` before opening a PR.
 
-Questions or issues: **aismail@7kingscode.com**
+**Maintainer:** Aismail · [aismail@7kingscode.com](mailto:aismail@7kingscode.com)
 
 ---
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — [LICENSE](LICENSE)
 
-Copyright (c) 2025–2026 Aismail.
+Copyright (c) 2025–2026 **Aismail**.

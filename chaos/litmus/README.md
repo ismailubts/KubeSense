@@ -1,6 +1,6 @@
 # Litmus Chaos Experiments
 
-This directory contains Litmus Chaos experiment definitions for testing the resilience of the KubeSentiment application.
+This directory contains Litmus Chaos experiment definitions for testing the resilience of the KubeSense application.
 
 ## Prerequisites
 

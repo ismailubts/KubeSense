@@ -1,5 +1,5 @@
 """
-Advanced Metrics and KPIs for KubeSentiment.
+Advanced Metrics and KPIs for KubeSense.
 
 This module provides comprehensive metrics beyond basic observability:
 - Business metrics (accuracy trends, user satisfaction)

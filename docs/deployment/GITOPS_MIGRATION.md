@@ -38,10 +38,10 @@ kubectl apply -f - <<EOF
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: kubesentiment
+  name: KubeSense
   namespace: argocd
 spec:
-  description: KubeSentiment MLOps Project
+  description: KubeSense MLOps Project
   sourceRepos: ['*']
   destinations:
   - namespace: '*'

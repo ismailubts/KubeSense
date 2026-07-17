@@ -56,7 +56,7 @@ graph TB
 kafka:
   enabled: true
   bootstrap_servers: ["localhost:9092"]
-  consumer_group: "kubesentiment_consumer"
+  consumer_group: "KubeSense_consumer"
   topic: "sentiment_requests"
 
   # Performance optimizations
@@ -79,7 +79,7 @@ export KAFKA_ENABLED=true
 # Kafka connection
 export KAFKA_BOOTSTRAP_SERVERS="localhost:9092"
 export KAFKA_TOPIC="sentiment_requests"
-export KAFKA_CONSUMER_GROUP="kubesentiment_consumer"
+export KAFKA_CONSUMER_GROUP="KubeSense_consumer"
 
 # Performance tuning
 export KAFKA_CONSUMER_THREADS=8
@@ -170,13 +170,13 @@ async def _process_batch_async(self, texts: List[str], message_ids: List[str]):
 
 ```python
 # Throughput metrics
-kafka_consumer_throughput_tps{topic="sentiment_requests",consumer_group="kubesentiment_consumer"}
+kafka_consumer_throughput_tps{topic="sentiment_requests",consumer_group="KubeSense_consumer"}
 
 # Processing metrics
-kafka_message_processing_duration_seconds_bucket{topic="sentiment_requests",consumer_group="kubesentiment_consumer",le="0.1"}
+kafka_message_processing_duration_seconds_bucket{topic="sentiment_requests",consumer_group="KubeSense_consumer",le="0.1"}
 
 # Error metrics
-kafka_messages_failed_total{topic="sentiment_requests",consumer_group="kubesentiment_consumer",error_type="ProcessingError"}
+kafka_messages_failed_total{topic="sentiment_requests",consumer_group="KubeSense_consumer",error_type="ProcessingError"}
 ```
 
 ### Key Metrics to Monitor
@@ -210,14 +210,14 @@ curl http://localhost:8001/api/v1/monitoring/kafka-metrics
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubesentiment-kafka
+  name: KubeSense-kafka
 spec:
   replicas: 3
   template:
     spec:
       containers:
-      - name: kubesentiment
-        image: kubesentiment:latest
+      - name: KubeSense
+        image: KubeSense:latest
         env:
         - name: KAFKA_ENABLED
           value: "true"
@@ -302,7 +302,7 @@ python benchmarking/kafka_performance_test.py \
 
 ```yaml
 # Scale consumer pods
-kubectl scale deployment kubesentiment-kafka --replicas=5
+kubectl scale deployment KubeSense-kafka --replicas=5
 
 # Scale Kafka partitions
 kafka-topics --alter --topic sentiment_requests --partitions 16
@@ -477,7 +477,7 @@ print(f"Current TPS: {metrics['throughput_tps']}")
 
 ## 📄 License
 
-This implementation follows the same license as the main KubeSentiment project.
+This implementation follows the same license as the main KubeSense project.
 
 ---
 

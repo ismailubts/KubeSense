@@ -1,11 +1,11 @@
-# KubeSentiment Debugging Guide
+# KubeSense Debugging Guide
 
 > **Last Updated:** 2025-11-19
 > **Purpose:** Help developers diagnose and fix common issues
 
 ## Overview
 
-This guide provides debugging techniques and common issues for KubeSentiment API development. Each section includes symptoms, diagnosis steps, and solutions.
+This guide provides debugging techniques and common issues for KubeSense API development. Each section includes symptoms, diagnosis steps, and solutions.
 
 ## Table of Contents
 

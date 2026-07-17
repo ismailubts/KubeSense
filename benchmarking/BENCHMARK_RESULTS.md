@@ -397,7 +397,7 @@ Set up automated benchmarks using cron or CI/CD:
 
 ```bash
 # Cron job (daily at 2 AM)
-0 2 * * * cd /path/to/KubeSentiment/benchmarking && ./quick-benchmark.sh -t cpu-medium >> /var/log/benchmark.log 2>&1
+0 2 * * * cd /path/to/KubeSense/benchmarking && ./quick-benchmark.sh -t cpu-medium >> /var/log/benchmark.log 2>&1
 ```
 
 ### CI/CD Integration

@@ -1,18 +1,19 @@
 apiVersion: v2
-name: mlops-sentiment
-description: Production-ready MLOps sentiment analysis microservice with monitoring
+name: mlops-kubesense
+description: KubeSense — production MLOps sentiment analysis microservice by Aismail
 type: application
 version: 0.1.0
 appVersion: "1.0.0"
 keywords:
   - mlops
+  - kubesense
   - sentiment-analysis
   - machine-learning
   - monitoring
   - fastapi
-home: https://github.com/aismail/KubeSentiment
+home: https://github.com/ismailubts/KubeSense
 sources:
-  - https://github.com/aismail/KubeSentiment
+  - https://github.com/ismailubts/KubeSense
 maintainers:
   - name: Aismail
     email: aismail@7kingscode.com

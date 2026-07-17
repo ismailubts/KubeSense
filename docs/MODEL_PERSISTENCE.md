@@ -1,6 +1,6 @@
 # Model Persistence: 160x Cold-Start Improvement (8s → 50ms)
 
-This document explains the model persistence strategies implemented in KubeSentiment to achieve sub-50ms cold-start times, representing a **160x improvement** over standard model loading.
+This document explains the model persistence strategies implemented in KubeSense to achieve sub-50ms cold-start times, representing a **160x improvement** over standard model loading.
 
 ## Table of Contents
 

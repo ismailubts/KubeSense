@@ -86,13 +86,13 @@ services:
       - ./config/monitoring:/var/lib/grafana/dashboards
       - ./config/monitoring:/etc/grafana/provisioning
 
-  # KubeSentiment API with Kafka consumer
-  kubesentiment-kafka:
+  # KubeSense API with Kafka consumer
+  KubeSense-kafka:
     build:
       context: .
       dockerfile: Dockerfile
       target: production
-    container_name: kubesentiment-kafka
+    container_name: KubeSense-kafka
     depends_on:
       - kafka
       - prometheus
@@ -103,7 +103,7 @@ services:
       - KAFKA_ENABLED=true
       - KAFKA_BOOTSTRAP_SERVERS=kafka:29092
       - KAFKA_TOPIC=sentiment_requests
-      - KAFKA_CONSUMER_GROUP=kubesentiment_consumer
+      - KAFKA_CONSUMER_GROUP=KubeSense_consumer
       - KAFKA_CONSUMER_THREADS=4
       - KAFKA_BATCH_SIZE=100
       - ENABLE_METRICS=true
@@ -127,7 +127,7 @@ services:
     container_name: kafka-performance-test
     depends_on:
       - kafka
-      - kubesentiment-kafka
+      - KubeSense-kafka
     environment:
       - KAFKA_BOOTSTRAP_SERVERS=kafka:29092
       - TEST_TOPIC=sentiment_requests

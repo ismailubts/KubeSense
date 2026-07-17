@@ -16,8 +16,8 @@ The monitoring stack includes:
 
 ```bash
 # Clone repository
-git clone https://github.com/aismail/KubeSentiment.git
-cd KubeSentiment
+git clone https://github.com/ismailubts/KubeSense.git
+cd KubeSense
 
 # Run full setup script
 ./scripts/setup-monitoring.sh

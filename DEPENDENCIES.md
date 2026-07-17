@@ -1,6 +1,6 @@
 # Dependency Management
 
-This document explains the dependency structure of KubeSentiment and the rationale behind the organization.
+This document explains the dependency structure of KubeSense and the rationale behind the organization.
 
 ## Overview
 
@@ -243,4 +243,4 @@ The modular approach allows you to optimize for your specific deployment scenari
 ---
 
 **Last Updated:** 2025-11-14
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>

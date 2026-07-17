@@ -87,8 +87,8 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
           labels: |
             org.opencontainers.image.title=${{ inputs.image-name }}
-            org.opencontainers.image.description=KubeSentiment MLOps Microservice
-            org.opencontainers.image.vendor=KubeSentiment
+            org.opencontainers.image.description=KubeSense MLOps Microservice
+            org.opencontainers.image.vendor=KubeSense
 
       - name: Prepare build args
         id: build-args

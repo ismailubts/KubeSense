@@ -1,13 +1,14 @@
 openapi: 3.0.3
 info:
-  title: Sentiment Analysis API
+  title: KubeSense API · Aismail
   description: |
-    Production-ready sentiment analysis microservice with real-time inference.
-    This API provides sentiment analysis capabilities using a fine-tuned DistilBERT model.
+    Cloud-native sentiment analysis microservice by Aismail (aismail@7kingscode.com).
+    Real-time DistilBERT inference with ONNX Runtime, Redis caching, and Kafka batch paths.
   version: 1.0.0
   contact:
-    name: API Support
-    email: support@example.com
+    name: Aismail
+    email: aismail@7kingscode.com
+    url: https://github.com/ismailubts/KubeSense
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -15,7 +16,7 @@ info:
 servers:
   - url: http://localhost:8000
     description: Local development server
-  - url: https://api.example.com/v1
+  - url: https://api.KubeSense.local/v1
     description: Production server
 
 paths:

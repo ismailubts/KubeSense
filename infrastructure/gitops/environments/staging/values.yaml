@@ -3,7 +3,7 @@
 # DO NOT EDIT MANUALLY - Updated automatically by CI pipeline
 
 image:
-  repository: ghcr.io/aismail/kubesentiment
+  repository: ghcr.io/ismailubts/KubeSense
   tag: main  # Updated by CI
 
 replicaCount: 2

@@ -1,5 +1,5 @@
 """
-Service Interfaces for KubeSentiment
+Service Interfaces for KubeSense
 
 This module defines abstract base classes (interfaces) for all services in the application.
 These interfaces promote:

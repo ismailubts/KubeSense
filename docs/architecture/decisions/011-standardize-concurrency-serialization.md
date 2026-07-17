@@ -2,12 +2,12 @@
 
 **Status:** Accepted
 **Date:** 2025-12-13
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 **Supersedes:** N/A
 
 ## Context
 
-As KubeSentiment scales to handle high-throughput workloads (as per [ADR 003](003-use-kafka-for-async-processing.md)), we face challenges related to resource management and data exchange:
+As KubeSense scales to handle high-throughput workloads (as per [ADR 003](003-use-kafka-for-async-processing.md)), we face challenges related to resource management and data exchange:
 
 1.  **Concurrency Management**: Deep learning models (ONNX, PyTorch) are heavy resources. Spawning a new model per request is impossible. Spawning one per thread is memory-prohibitive. We need a strategy to share models safely across concurrent requests (FastAPI/Uvicorn workers).
 2.  **Thread Contention**: Python's GIL and the underlying runtime's (ONNX/PyTorch) internal threading can conflict, leading to excessive context switching and degraded performance.

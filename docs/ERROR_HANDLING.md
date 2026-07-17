@@ -2,7 +2,7 @@
 
 ## Overview
 
-KubeSentiment implements a comprehensive, standardized error handling system that provides clear, actionable error messages to API clients while maintaining detailed logging for debugging and monitoring.
+KubeSense implements a comprehensive, standardized error handling system that provides clear, actionable error messages to API clients while maintaining detailed logging for debugging and monitoring.
 
 ## Architecture
 

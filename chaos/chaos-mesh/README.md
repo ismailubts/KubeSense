@@ -1,6 +1,6 @@
 # Chaos Mesh Experiments
 
-This directory contains Chaos Mesh experiment definitions for testing the resilience of the KubeSentiment application.
+This directory contains Chaos Mesh experiment definitions for testing the resilience of the KubeSense application.
 
 ## Prerequisites
 

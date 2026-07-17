@@ -2,7 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2024-01-10
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
@@ -22,7 +22,7 @@ Our API will serve:
 
 ## Decision
 
-We will use **FastAPI** as the web framework for KubeSentiment.
+We will use **FastAPI** as the web framework for KubeSense.
 
 ### Key Features Utilized
 
@@ -133,7 +133,7 @@ from app.api.routes import predictions, monitoring
 from app.core.config import get_settings
 
 app = FastAPI(
-    title="KubeSentiment API",
+    title="KubeSense API",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",

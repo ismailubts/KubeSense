@@ -1,6 +1,6 @@
 # Environment Variables Reference
 
-Complete reference of all KubeSentiment configuration settings.
+Complete reference of all KubeSense configuration settings.
 
 **Quick Links:** [Server](#server) | [Model](#model) | [Security](#security) | [Performance](#performance) | [Kafka](#kafka) | [Redis](#redis) | [Vault](#vault) | [Data Lake](#data-lake) | [Monitoring](#monitoring) | [MLOps](#mlops)
 
@@ -513,7 +513,7 @@ data:
 ```bash
 docker run -e MLOPS_PROFILE=production \
   -e MLOPS_REDIS_HOST=redis \
-  kubesentiment:latest
+  KubeSense:latest
 ```
 
 ---
@@ -546,4 +546,4 @@ See **[Profiles](PROFILES.md)** for complete defaults for each profile.
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>

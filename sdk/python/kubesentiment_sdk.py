@@ -1,11 +1,11 @@
 """
-KubeSentiment Python SDK
+KubeSense Python SDK
 
-Official Python client library for KubeSentiment API.
+Official Python client library for KubeSense API.
 
 Example usage:
-    >>> from kubesentiment_sdk import KubeSentimentClient
-    >>> client = KubeSentimentClient(base_url="http://localhost:8000", api_key="your-key")
+    >>> from KubeSense_sdk import KubeSenseClient
+    >>> client = KubeSenseClient(base_url="http://localhost:8000", api_key="your-key")
     >>> result = client.predict("This is amazing!")
     >>> print(result.label, result.confidence)
     POSITIVE 0.9876
@@ -84,12 +84,12 @@ class BatchJob:
     error: Optional[str] = None
 
 
-class KubeSentimentError(Exception):
-    """Base exception for KubeSentiment SDK."""
+class KubeSenseError(Exception):
+    """Base exception for KubeSense SDK."""
     pass
 
 
-class APIError(KubeSentimentError):
+class APIError(KubeSenseError):
     """API request failed."""
     def __init__(self, status_code: int, message: str):
         """Initialize the APIError.
@@ -103,17 +103,17 @@ class APIError(KubeSentimentError):
         super().__init__(f"API Error {status_code}: {message}")
 
 
-class KubeSentimentClient:
+class KubeSenseClient:
     """
-    Official Python client for KubeSentiment API.
+    Official Python client for KubeSense API.
 
     Args:
-        base_url: Base URL of the KubeSentiment API (e.g., "http://localhost:8000")
+        base_url: Base URL of the KubeSense API (e.g., "http://localhost:8000")
         api_key: Optional API key for authentication
         timeout: Request timeout in seconds (default: 30)
 
     Example:
-        >>> client = KubeSentimentClient(base_url="http://localhost:8000")
+        >>> client = KubeSenseClient(base_url="http://localhost:8000")
         >>> result = client.predict("I love this product!")
         >>> print(f"{result.label}: {result.confidence:.2%}")
     """
@@ -125,10 +125,10 @@ class KubeSentimentClient:
         timeout: int = 30,
         verify_ssl: bool = True
     ):
-        """Initializes the KubeSentiment client.
+        """Initializes the KubeSense client.
 
         Args:
-            base_url: Base URL of the KubeSentiment API (e.g., "http://localhost:8000").
+            base_url: Base URL of the KubeSense API (e.g., "http://localhost:8000").
             api_key: Optional API key for authentication.
             timeout: Request timeout in seconds (default: 30).
             verify_ssl: Whether to verify SSL certificates (default: True).
@@ -142,7 +142,7 @@ class KubeSentimentClient:
         self.session = requests.Session()
         if api_key:
             self.session.headers['X-API-Key'] = api_key
-        self.session.headers['User-Agent'] = f'kubesentiment-sdk/{__version__}'
+        self.session.headers['User-Agent'] = f'KubeSense-sdk/{__version__}'
 
     def _request(
         self,
@@ -164,7 +164,7 @@ class KubeSentimentClient:
 
         Raises:
             APIError: If the API returns an error status code.
-            KubeSentimentError: If the request fails due to network issues.
+            KubeSenseError: If the request fails due to network issues.
         """
         url = f"{self.base_url}{endpoint}"
 
@@ -186,7 +186,7 @@ class KubeSentimentClient:
                 error_detail = str(e)
             raise APIError(e.response.status_code, error_detail)
         except requests.exceptions.RequestException as e:
-            raise KubeSentimentError(f"Request failed: {e}")
+            raise KubeSenseError(f"Request failed: {e}")
 
     def predict(
         self,
@@ -360,7 +360,7 @@ class KubeSentimentClient:
             if job.status == JobStatus.COMPLETED.value:
                 return self.get_batch_results(job_id)
             elif job.status == JobStatus.FAILED.value:
-                raise KubeSentimentError(f"Batch job failed: {job.error}")
+                raise KubeSenseError(f"Batch job failed: {job.error}")
 
             if time.time() - start_time > max_wait:
                 raise TimeoutError(f"Job did not complete within {max_wait} seconds")
@@ -450,9 +450,9 @@ def predict(text: str, base_url: str = "http://localhost:8000", api_key: Optiona
     Quick prediction function.
 
     Example:
-        >>> from kubesentiment_sdk import predict
+        >>> from KubeSense_sdk import predict
         >>> result = predict("I love this!")
         >>> print(result.label)
     """
-    with KubeSentimentClient(base_url=base_url, api_key=api_key) as client:
+    with KubeSenseClient(base_url=base_url, api_key=api_key) as client:
         return client.predict(text)

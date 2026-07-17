@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-03-10
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-KubeSentiment requires deployment across multiple environments and cloud providers. Managing infrastructure manually leads to several challenges:
+KubeSense requires deployment across multiple environments and cloud providers. Managing infrastructure manually leads to several challenges:
 
 1. **Inconsistency**: Manual configuration leads to environment drift
 2. **Repeatability**: Difficult to recreate infrastructure reliably
@@ -213,7 +213,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "kubesentiment-terraform-state"
+    bucket = "KubeSense-terraform-state"
     prefix = "terraform/state"
   }
 }
@@ -299,7 +299,7 @@ resource "google_container_node_pool" "primary_nodes" {
       project = var.project_name
     }
 
-    tags = ["kubesentiment", var.environment]
+    tags = ["KubeSense", var.environment]
   }
 }
 ```
@@ -308,7 +308,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
 ```hcl
 # infrastructure/modules/helm-release/main.tf
-resource "helm_release" "kubesentiment" {
+resource "helm_release" "KubeSense" {
   name       = var.release_name
   namespace  = var.namespace
   repository = var.chart_repository
@@ -344,7 +344,7 @@ resource "helm_release" "kubesentiment" {
 module "gke" {
   source = "../../modules/gke"
 
-  cluster_name  = "kubesentiment-prod"
+  cluster_name  = "KubeSense-prod"
   project_id    = var.gcp_project_id
   region        = "us-central1"
   environment   = "production"
@@ -355,11 +355,11 @@ module "gke" {
   machine_type   = "n2-standard-4"
 }
 
-module "kubesentiment" {
+module "KubeSense" {
   source = "../../modules/helm-release"
 
-  release_name      = "kubesentiment"
-  namespace         = "kubesentiment"
+  release_name      = "KubeSense"
+  namespace         = "KubeSense"
   chart_name        = "mlops-sentiment"
   chart_repository  = "../../helm"
   chart_version     = "1.0.0"
@@ -379,7 +379,7 @@ module "kubesentiment" {
 # infrastructure/backend.tf
 terraform {
   backend "gcs" {
-    bucket  = "kubesentiment-terraform-state"
+    bucket  = "KubeSense-terraform-state"
     prefix  = "prod/state"
 
     # Enable encryption
@@ -413,7 +413,7 @@ terraform show tfplan
 terraform apply tfplan
 
 # 6. Verify deployment
-kubectl get pods -n kubesentiment
+kubectl get pods -n KubeSense
 ```
 
 ### CI/CD Integration
@@ -466,7 +466,7 @@ infracost breakdown --path infrastructure/
 
 # Example output:
 # ┌─────────────────────────────────────────────────────────────┐
-# │ Project: KubeSentiment Production                            │
+# │ Project: KubeSense Production                            │
 # ├─────────────────────────────────────────────────────────────┤
 # │ google_container_cluster.primary                             │
 # │  └─ Cluster management fee              $73.00/mo           │

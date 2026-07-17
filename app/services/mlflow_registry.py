@@ -1,5 +1,5 @@
 """
-MLflow Model Registry integration for KubeSentiment.
+MLflow Model Registry integration for KubeSense.
 
 This module provides integration with MLflow Model Registry for:
 - Model versioning and lifecycle management

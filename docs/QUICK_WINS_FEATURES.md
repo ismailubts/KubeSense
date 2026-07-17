@@ -1,6 +1,6 @@
 # Quick Wins Features - Implementation Guide
 
-This document describes the five major "Quick Win" features implemented to enhance KubeSentiment's production capabilities.
+This document describes the five major "Quick Win" features implemented to enhance KubeSense's production capabilities.
 
 ## Table of Contents
 
@@ -494,7 +494,7 @@ sentiment_slo_latency_p99_ms 78.90
 ## 5. SDK & Client Libraries
 
 ### Overview
-Official client libraries for Python and JavaScript/TypeScript to simplify integration with KubeSentiment API.
+Official client libraries for Python and JavaScript/TypeScript to simplify integration with KubeSense API.
 
 ### Features
 - **Type-Safe**: Full TypeScript types and Python type hints
@@ -511,16 +511,16 @@ Official client libraries for Python and JavaScript/TypeScript to simplify integ
 
 ```bash
 pip install requests  # Dependency
-cp sdk/python/kubesentiment_sdk.py /path/to/your/project/
+cp sdk/python/KubeSense_sdk.py /path/to/your/project/
 ```
 
 #### Quick Start
 
 ```python
-from kubesentiment_sdk import KubeSentimentClient
+from KubeSense_sdk import KubeSenseClient
 
 # Create client
-client = KubeSentimentClient(
+client = KubeSenseClient(
     base_url="http://localhost:8000",
     api_key="your-api-key"  # Optional
 )
@@ -574,7 +574,7 @@ print(f"Total predictions: {kpis['total_predictions']}")
 #### Context Manager
 
 ```python
-with KubeSentimentClient(base_url="http://localhost:8000") as client:
+with KubeSenseClient(base_url="http://localhost:8000") as client:
     result = client.predict("Hello world")
     print(result.label)
 ```
@@ -582,7 +582,7 @@ with KubeSentimentClient(base_url="http://localhost:8000") as client:
 #### Convenience Function
 
 ```python
-from kubesentiment_sdk import predict
+from KubeSense_sdk import predict
 
 result = predict("I love this!", base_url="http://localhost:8000")
 print(result.label)
@@ -595,16 +595,16 @@ print(result.label)
 #### Installation
 
 ```bash
-cp sdk/javascript/kubesentiment-sdk.ts /path/to/your/project/src/
+cp sdk/javascript/KubeSense-sdk.ts /path/to/your/project/src/
 ```
 
 #### Quick Start
 
 ```typescript
-import { KubeSentimentClient, Priority } from './kubesentiment-sdk';
+import { KubeSenseClient, Priority } from './KubeSense-sdk';
 
 // Create client
-const client = new KubeSentimentClient({
+const client = new KubeSenseClient({
   baseUrl: 'http://localhost:8000',
   apiKey: 'your-api-key',  // Optional
   timeout: 30000  // Optional, default 30s
@@ -664,7 +664,7 @@ console.log(`Total predictions: ${kpis.total_predictions}`);
 #### Convenience Function
 
 ```typescript
-import { predict } from './kubesentiment-sdk';
+import { predict } from './KubeSense-sdk';
 
 const result = await predict('I love this!', 'http://localhost:8000');
 console.log(result.label);
@@ -673,14 +673,14 @@ console.log(result.label);
 #### Error Handling
 
 ```typescript
-import { KubeSentimentClient, APIError, KubeSentimentError } from './kubesentiment-sdk';
+import { KubeSenseClient, APIError, KubeSenseError } from './KubeSense-sdk';
 
 try {
   const result = await client.predict('Hello');
 } catch (error) {
   if (error instanceof APIError) {
     console.error(`API Error ${error.statusCode}: ${error.message}`);
-  } else if (error instanceof KubeSentimentError) {
+  } else if (error instanceof KubeSenseError) {
     console.error(`SDK Error: ${error.message}`);
   } else {
     console.error('Unknown error:', error);

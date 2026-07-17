@@ -2,7 +2,7 @@
 
 ## Overview
 
-KubeSentiment now implements a comprehensive interface-based architecture following the Dependency Inversion Principle (DIP). All services implement abstract base class (ABC) interfaces, enabling:
+KubeSense now implements a comprehensive interface-based architecture following the Dependency Inversion Principle (DIP). All services implement abstract base class (ABC) interfaces, enabling:
 
 - **Loose Coupling**: Components depend on abstractions, not concrete implementations
 - **Easier Testing**: Mock interfaces instead of concrete classes
@@ -416,4 +416,4 @@ def my_function(service: IPredictionService):
 
 **Last Updated**: 2025-11-14
 **Version**: 1.0
-**Author**: KubeSentiment Team
+**Author**: Aismail <aismail@7kingscode.com>

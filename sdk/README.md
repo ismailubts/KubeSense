@@ -1,17 +1,17 @@
-# KubeSentiment SDKs
+# KubeSense SDKs
 
-Official client libraries for KubeSentiment API in Python and JavaScript/TypeScript.
+Official client libraries for KubeSense API in Python and JavaScript/TypeScript.
 
 ## Available SDKs
 
 ### Python SDK
-- **Location**: `python/kubesentiment_sdk.py`
+- **Location**: `python/KubeSense_sdk.py`
 - **Python Version**: 3.7+
 - **Dependencies**: `requests`
 - **Type Hints**: Fully typed with dataclasses
 
 ### JavaScript/TypeScript SDK
-- **Location**: `javascript/kubesentiment-sdk.ts`
+- **Location**: `javascript/KubeSense-sdk.ts`
 - **Runtime**: Node.js 14+ or modern browsers
 - **Dependencies**: None (uses native `fetch`)
 - **Type Safety**: Full TypeScript support
@@ -21,9 +21,9 @@ Official client libraries for KubeSentiment API in Python and JavaScript/TypeScr
 ### Python
 
 ```python
-from kubesentiment_sdk import KubeSentimentClient
+from KubeSense_sdk import KubeSenseClient
 
-client = KubeSentimentClient(base_url="http://localhost:8000")
+client = KubeSenseClient(base_url="http://localhost:8000")
 result = client.predict("This is amazing!")
 print(f"{result.label}: {result.confidence:.2%}")
 ```
@@ -31,9 +31,9 @@ print(f"{result.label}: {result.confidence:.2%}")
 ### TypeScript/JavaScript
 
 ```typescript
-import { KubeSentimentClient } from './kubesentiment-sdk';
+import { KubeSenseClient } from './KubeSense-sdk';
 
-const client = new KubeSentimentClient({ baseUrl: 'http://localhost:8000' });
+const client = new KubeSenseClient({ baseUrl: 'http://localhost:8000' });
 const result = await client.predict('This is amazing!');
 console.log(`${result.label}: ${(result.confidence * 100).toFixed(2)}%`);
 ```

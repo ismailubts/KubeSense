@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ArgoCD Bootstrap Script for KubeSentiment
+# ArgoCD Bootstrap Script for KubeSense
 # This script installs ArgoCD and sets up initial configuration
 
 set -euo pipefail
@@ -170,16 +170,16 @@ install_argocd_cli() {
 
 # Create ArgoCD Project
 create_project() {
-    log_info "Creating ArgoCD Project for KubeSentiment..."
+    log_info "Creating ArgoCD Project for KubeSense..."
 
     kubectl apply -f - <<EOF
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: kubesentiment
+  name: KubeSense
   namespace: argocd
 spec:
-  description: KubeSentiment MLOps Sentiment Analysis Project
+  description: KubeSense MLOps Sentiment Analysis Project
 
   # Source repositories
   sourceRepos:
@@ -232,7 +232,7 @@ bootstrap_applications() {
 
 # Main execution
 main() {
-    echo "🚀 ArgoCD Bootstrap for KubeSentiment"
+    echo "🚀 ArgoCD Bootstrap for KubeSense"
     echo "======================================="
     echo ""
 

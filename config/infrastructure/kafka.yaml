@@ -8,7 +8,7 @@ kafka:
     - "localhost:9092"
     - "kafka-1:9092"
     - "kafka-2:9092"
-  consumer_group: "kubesentiment_consumer_group"
+  consumer_group: "KubeSense_consumer_group"
   topic: "sentiment_requests"
   auto_offset_reset: "latest"
 

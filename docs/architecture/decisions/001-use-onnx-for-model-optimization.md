@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-01-15
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-The KubeSentiment service needs to provide fast, efficient sentiment analysis inference in a production environment. PyTorch models, while powerful and easy to develop with, have several limitations in production:
+The KubeSense service needs to provide fast, efficient sentiment analysis inference in a production environment. PyTorch models, while powerful and easy to develop with, have several limitations in production:
 
 1. **Cold-start time**: Loading PyTorch models takes 5-8 seconds
 2. **Memory footprint**: PyTorch runtime requires significant memory

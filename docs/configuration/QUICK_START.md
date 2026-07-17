@@ -1,6 +1,6 @@
 # Configuration Quick Start
 
-Get KubeSentiment running locally in 5 minutes.
+Get KubeSense running locally in 5 minutes.
 
 ## Local Development (Minimal Setup)
 
@@ -161,7 +161,7 @@ The app automatically loads `.env` files using `python-dotenv`.
 ### Build Image
 
 ```bash
-docker build -t kubesentiment:local .
+docker build -t KubeSense:local .
 ```
 
 ### Run Container
@@ -169,7 +169,7 @@ docker build -t kubesentiment:local .
 ```bash
 docker run -e MLOPS_PROFILE=local \
   -p 8000:8000 \
-  kubesentiment:local
+  KubeSense:local
 ```
 
 ### With Services (Docker Compose)

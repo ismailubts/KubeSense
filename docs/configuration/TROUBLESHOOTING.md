@@ -696,7 +696,7 @@ pip list | grep -E "(pydantic|fastapi|kafka|redis)"
 
 When reporting configuration issues, include:
 
-1. KubeSentiment version
+1. KubeSense version
 2. Python version
 3. What you're trying to do
 4. Configuration profile being used
@@ -716,4 +716,4 @@ When reporting configuration issues, include:
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>

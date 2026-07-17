@@ -1,1 +1,1 @@
-"""Shared test fixtures and utilities for the KubeSentiment test suite."""
+"""Shared test fixtures and utilities for the KubeSense test suite."""

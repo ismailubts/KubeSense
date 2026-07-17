@@ -11,7 +11,11 @@ import time
 from typing import Optional
 
 from prometheus_client import CONTENT_TYPE_LATEST, Counter, Gauge, Histogram, Info, generate_latest
-import torch
+
+try:
+    import torch
+except ImportError:  # pragma: no cover — mock/local without PyTorch installed
+    torch = None  # type: ignore[assignment]
 
 from app.core.config import get_settings
 
@@ -80,15 +84,21 @@ class PrometheusMetrics:
 
     def _initialize_static_metrics(self):
         """Initializes static metrics that do not change during runtime."""
+        if torch is None:
+            TORCH_VERSION.info({"version": "unavailable"})
+            CUDA_AVAILABLE.set(0)
+            CUDA_DEVICE_COUNT.set(0)
+            return
         TORCH_VERSION.info({"version": torch.__version__})
         CUDA_AVAILABLE.set(1 if torch.cuda.is_available() else 0)
         CUDA_DEVICE_COUNT.set(torch.cuda.device_count())
 
     def update_system_metrics(self):
         """Updates dynamic system metrics, such as CUDA memory usage."""
-        if torch.cuda.is_available():
-            CUDA_MEMORY_ALLOCATED.set(torch.cuda.memory_allocated())
-            CUDA_MEMORY_RESERVED.set(torch.cuda.memory_reserved())
+        if torch is None or not torch.cuda.is_available():
+            return
+        CUDA_MEMORY_ALLOCATED.set(torch.cuda.memory_allocated())
+        CUDA_MEMORY_RESERVED.set(torch.cuda.memory_reserved())
 
     def get_metrics(self) -> bytes:
         """Generates and returns the metrics in Prometheus text format.
@@ -119,6 +129,24 @@ class PrometheusMetrics:
             The content type string for Prometheus metrics (`text/plain`).
         """
         return CONTENT_TYPE_LATEST
+
+    def increment_active_requests(self) -> None:
+        """Increments the gauge for active requests."""
+        ACTIVE_REQUESTS.inc()
+
+    def decrement_active_requests(self) -> None:
+        """Decrements the gauge for active requests."""
+        ACTIVE_REQUESTS.dec()
+
+    def record_request(self, endpoint: str, method: str, status_code: int) -> None:
+        """Increments the counter for completed requests."""
+        REQUEST_COUNT.labels(
+            endpoint=endpoint, method=method, status_code=str(status_code)
+        ).inc()
+
+    def record_request_duration(self, endpoint: str, method: str, duration: float) -> None:
+        """Records the duration of a request."""
+        REQUEST_DURATION.labels(endpoint=endpoint, method=method).observe(duration)
 
 
 _metrics_instance: Optional[PrometheusMetrics] = None

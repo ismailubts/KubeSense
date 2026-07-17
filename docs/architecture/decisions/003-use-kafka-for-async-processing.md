@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-02-01
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-The KubeSentiment service needs to handle high-volume batch predictions and asynchronous processing workloads. As the system scales, we face several challenges:
+The KubeSense service needs to handle high-volume batch predictions and asynchronous processing workloads. As the system scales, we face several challenges:
 
 1. **Synchronous API limitations**: REST API has finite request/response timeout limits
 2. **Large batch processing**: Processing thousands of predictions synchronously blocks resources

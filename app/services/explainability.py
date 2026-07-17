@@ -1,5 +1,5 @@
 """
-Model Explainability and Interpretability for KubeSentiment.
+Model Explainability and Interpretability for KubeSense.
 
 This module provides various explanation methods for sentiment predictions:
 - Attention weights visualization

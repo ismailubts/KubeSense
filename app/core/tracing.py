@@ -8,14 +8,6 @@ supporting both Jaeger and Zipkin backends for trace collection and visualizatio
 from typing import Optional
 
 from opentelemetry import trace
-from opentelemetry.exporter.jaeger.thrift import JaegerExporter
-from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
-from opentelemetry.exporter.zipkin.json import ZipkinExporter
-from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
-from opentelemetry.instrumentation.httpx import HTTPXClientInstrumentor
-from opentelemetry.instrumentation.logging import LoggingInstrumentor
-from opentelemetry.instrumentation.redis import RedisInstrumentor
-from opentelemetry.instrumentation.requests import RequestsInstrumentor
 from opentelemetry.sdk.resources import Resource, SERVICE_NAME, SERVICE_VERSION
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
@@ -25,6 +17,48 @@ from app.core.config import get_settings
 from app.core.logging import get_logger
 
 logger = get_logger(__name__)
+
+# Optional exporters / instrumentors — imported lazily so local/dev can start
+# without a full OpenTelemetry exporter stack installed.
+try:
+    from opentelemetry.exporter.jaeger.thrift import JaegerExporter
+except ImportError:  # pragma: no cover
+    JaegerExporter = None  # type: ignore[misc, assignment]
+
+try:
+    from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+except ImportError:  # pragma: no cover
+    OTLPSpanExporter = None  # type: ignore[misc, assignment]
+
+try:
+    from opentelemetry.exporter.zipkin.json import ZipkinExporter
+except ImportError:  # pragma: no cover
+    ZipkinExporter = None  # type: ignore[misc, assignment]
+
+try:
+    from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+except ImportError:  # pragma: no cover
+    FastAPIInstrumentor = None  # type: ignore[misc, assignment]
+
+try:
+    from opentelemetry.instrumentation.httpx import HTTPXClientInstrumentor
+except ImportError:  # pragma: no cover
+    HTTPXClientInstrumentor = None  # type: ignore[misc, assignment]
+
+try:
+    from opentelemetry.instrumentation.logging import LoggingInstrumentor
+except ImportError:  # pragma: no cover
+    LoggingInstrumentor = None  # type: ignore[misc, assignment]
+
+try:
+    from opentelemetry.instrumentation.redis import RedisInstrumentor
+except ImportError:  # pragma: no cover
+    RedisInstrumentor = None  # type: ignore[misc, assignment]
+
+try:
+    from opentelemetry.instrumentation.requests import RequestsInstrumentor
+except ImportError:  # pragma: no cover
+    RequestsInstrumentor = None  # type: ignore[misc, assignment]
 
 
 class TracingConfig:

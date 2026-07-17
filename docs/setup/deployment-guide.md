@@ -35,8 +35,8 @@ This guide provides basic instructions for deploying the Sentiment Analysis Micr
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/aismail/KubeSentiment.git
-   cd KubeSentiment
+   git clone https://github.com/ismailubts/KubeSense.git
+   cd KubeSense
    ```
 
 2. Create and activate a virtual environment:

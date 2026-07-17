@@ -16,7 +16,7 @@ Profile-based configuration system with environment-specific defaults.
 
 ## Overview
 
-Instead of manually setting 50+ environment variables for each environment, KubeSentiment provides **profiles** with sensible defaults.
+Instead of manually setting 50+ environment variables for each environment, KubeSense provides **profiles** with sensible defaults.
 
 **How it works:**
 1. Set `MLOPS_PROFILE=production`
@@ -324,7 +324,7 @@ Bake the profile into your Docker image:
 docker build \
   --build-arg MLOPS_PROFILE=production \
   --build-arg VERSION=1.0.0 \
-  -t kubesentiment:1.0.0 .
+  -t KubeSense:1.0.0 .
 ```
 
 ### Method 4: Kubernetes ConfigMap
@@ -335,7 +335,7 @@ The profile is set in the ConfigMap:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kubesentiment-config
+  name: KubeSense-config
 data:
   MLOPS_PROFILE: "production"
   MLOPS_REDIS_HOST: "redis-prod"  # Override if needed
@@ -660,4 +660,4 @@ for name, info in profiles.items():
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>

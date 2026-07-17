@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-03-01
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-As KubeSentiment scales in production, we need comprehensive observability to:
+As KubeSense scales in production, we need comprehensive observability to:
 
 1. **Detect issues quickly**: Identify problems before users report them
 2. **Debug production**: Understand system behavior in real-time
@@ -260,7 +260,7 @@ def configure_tracing(app):
     """Configure distributed tracing."""
     # Setup tracer provider
     provider = TracerProvider(resource=Resource.create({
-        "service.name": "kubesentiment",
+        "service.name": "KubeSense",
         "service.version": "1.0.0",
         "deployment.environment": settings.PROFILE,
     }))
@@ -371,7 +371,7 @@ groups:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        KubeSentiment App                         │
+│                        KubeSense App                         │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
 │  │   FastAPI    │  │    Redis     │  │    Kafka     │          │
 │  │  (metrics)   │  │  (traces)    │  │  (traces)    │          │

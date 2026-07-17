@@ -1,4 +1,4 @@
-# KubeSentiment API Reference
+# KubeSense API Reference
 
 > **Version:** 1.0.0
 > **Last Updated:** 2025-11-19
@@ -22,7 +22,7 @@
 
 ## Overview
 
-KubeSentiment is a production-grade sentiment analysis API built with FastAPI. It provides real-time and batch sentiment analysis with multiple model backends (ONNX and PyTorch), Redis caching, and comprehensive observability.
+KubeSense is a production-grade sentiment analysis API built with FastAPI. It provides real-time and batch sentiment analysis with multiple model backends (ONNX and PyTorch), Redis caching, and comprehensive observability.
 
 ### Key Features
 
@@ -42,7 +42,7 @@ KubeSentiment is a production-grade sentiment analysis API built with FastAPI. I
 
 ```
 Development: http://localhost:8000
-Production:  https://api.kubesentiment.com
+Production:  https://api.KubeSense.com
 ```
 
 ### API Versioning
@@ -65,7 +65,7 @@ In debug/local mode, the version prefix is omitted:
 
 ### Authentication
 
-Currently, KubeSentiment does not require authentication for all endpoints. For production deployments, consider:
+Currently, KubeSense does not require authentication for all endpoints. For production deployments, consider:
 
 - **API Keys**: Implement via custom header middleware
 - **OAuth 2.0**: For third-party integrations
@@ -731,7 +731,7 @@ Retrieves detailed metadata about the currently loaded machine learning model.
 
 ### Kafka Integration
 
-KubeSentiment includes Kafka integration for high-throughput async message processing.
+KubeSense includes Kafka integration for high-throughput async message processing.
 
 #### Kafka Metrics Endpoint
 
@@ -900,15 +900,15 @@ def check_service_health():
 Install with pip:
 
 ```bash
-pip install kubesentiment-sdk
+pip install KubeSense-sdk
 ```
 
 Usage:
 
 ```python
-from kubesentiment import KubeSentimentClient
+from KubeSense import KubeSenseClient
 
-client = KubeSentimentClient(base_url="http://localhost:8000")
+client = KubeSenseClient(base_url="http://localhost:8000")
 
 # Single prediction
 result = client.predict("I love this product!")
@@ -932,15 +932,15 @@ for result in results:
 Install with npm:
 
 ```bash
-npm install @kubesentiment/client
+npm install @KubeSense/client
 ```
 
 Usage:
 
 ```javascript
-import { KubeSentimentClient } from '@kubesentiment/client';
+import { KubeSenseClient } from '@KubeSense/client';
 
-const client = new KubeSentimentClient({
+const client = new KubeSenseClient({
   baseUrl: 'http://localhost:8000'
 });
 
@@ -975,4 +975,4 @@ results.forEach(r => {
 ---
 
 **Last Updated:** 2025-11-19
-**Maintainer:** AI Engineering Team
+**Maintainer:** Aismail <aismail@7kingscode.com>

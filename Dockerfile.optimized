@@ -83,8 +83,11 @@ ARG REVISION
 LABEL org.opencontainers.image.created="${BUILDTIME}"
 LABEL org.opencontainers.image.version="${VERSION}"
 LABEL org.opencontainers.image.revision="${REVISION}"
-LABEL org.opencontainers.image.title="MLOps Sentiment Analysis - Optimized"
-LABEL org.opencontainers.image.description="Sub-50ms cold-start sentiment analysis service"
+LABEL org.opencontainers.image.title="KubeSense API · Aismail - Optimized"
+LABEL org.opencontainers.image.description="Sub-50ms cold-start sentiment analysis by Aismail"
+LABEL org.opencontainers.image.source="https://github.com/ismailubts/KubeSense"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.authors="Aismail <aismail@7kingscode.com>"
 
 # Environment variables
 ENV PYTHONUNBUFFERED=1 \

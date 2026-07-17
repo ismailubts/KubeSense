@@ -19,10 +19,11 @@ ARG MLOPS_PROFILE=production
 LABEL org.opencontainers.image.created="${BUILDTIME}"
 LABEL org.opencontainers.image.version="${VERSION}"
 LABEL org.opencontainers.image.revision="${REVISION}"
-LABEL org.opencontainers.image.title="MLOps Sentiment Analysis Service"
-LABEL org.opencontainers.image.description="Production-ready FastAPI microservice for sentiment analysis"
-LABEL org.opencontainers.image.source="https://github.com/aismail/KubeSentiment"
+LABEL org.opencontainers.image.title="KubeSense API · Aismail"
+LABEL org.opencontainers.image.description="Production-ready FastAPI sentiment microservice by Aismail"
+LABEL org.opencontainers.image.source="https://github.com/ismailubts/KubeSense"
 LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.authors="Aismail <aismail@7kingscode.com>"
 
 # Set environment variables for Python
 ENV PYTHONUNBUFFERED=1 \

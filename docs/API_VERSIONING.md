@@ -1,10 +1,10 @@
 # API Versioning Strategy
 
-This document outlines the API versioning approach used in KubeSentiment and provides guidance for API consumers and contributors.
+This document outlines the API versioning approach used in KubeSense and provides guidance for API consumers and contributors.
 
 ## Versioning Approach
 
-KubeSentiment uses **URL-based versioning** with the `/api/v1` prefix for all production endpoints.
+KubeSense uses **URL-based versioning** with the `/api/v1` prefix for all production endpoints.
 
 ### Version Prefix
 
@@ -253,7 +253,7 @@ These are not covered by stability guarantees.
 
 ### What about GraphQL or gRPC?
 
-Currently, KubeSentiment uses REST API with JSON. Future versions may support:
+Currently, KubeSense uses REST API with JSON. Future versions may support:
 - GraphQL for flexible querying
 - gRPC for high-performance streaming
 
@@ -285,4 +285,4 @@ rate(http_requests_total{deprecated="true"}[5m])
 ---
 
 **Last Updated:** 2025-10-30
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>

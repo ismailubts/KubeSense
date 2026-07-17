@@ -61,7 +61,7 @@ curl -X POST "http://localhost:8000/predict" \
 ## 📁 Project Structure
 
 ```
-KubeSentiment/
+KubeSense/
 ├── .env                    # Environment variables
 ├── app/                    # Main application
 │   ├── __init__.py         # Package init

@@ -365,7 +365,7 @@ class DataLakeWriter(IDataWriter):
                 Body=data,
                 ContentType="application/x-parquet",
                 Metadata={
-                    "writer": "kubesentiment",
+                    "writer": "KubeSense",
                     "version": self.settings.server.app_version,
                     "compression": self.settings.data_lake_compression,
                 },
@@ -394,7 +394,7 @@ class DataLakeWriter(IDataWriter):
 
         # Set metadata
         blob.metadata = {
-            "writer": "kubesentiment",
+            "writer": "KubeSense",
             "version": self.settings.server.app_version,
             "compression": self.settings.data_lake_compression,
         }
@@ -428,7 +428,7 @@ class DataLakeWriter(IDataWriter):
                     "content_type": "application/x-parquet",
                 },
                 metadata={
-                    "writer": "kubesentiment",
+                    "writer": "KubeSense",
                     "version": self.settings.server.app_version,
                     "compression": self.settings.data_lake_compression,
                 },

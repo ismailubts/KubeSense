@@ -5,10 +5,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kubesentiment-staging-config
+  name: KubeSense-staging-config
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
     environment: staging
     component: config
 data:
@@ -32,7 +32,7 @@ data:
   MLOPS_REDIS_PORT: "6379"
 
   MLOPS_VAULT_ADDR: "https://vault-staging.example.com"
-  MLOPS_VAULT_ROLE: "kubesentiment-staging"
+  MLOPS_VAULT_ROLE: "KubeSense-staging"
   MLOPS_VAULT_NAMESPACE: "staging"
 
   # MLflow (enabled by default via profile)
@@ -41,11 +41,11 @@ data:
 
   # Tracing (enabled by default via profile)
   MLOPS_JAEGER_AGENT_HOST: "jaeger-agent-staging"
-  MLOPS_SERVICE_NAME: "kubesentiment-staging"
+  MLOPS_SERVICE_NAME: "KubeSense-staging"
 
   # ===== Security =====
   # API key should be set via Secret, not ConfigMap
-  # MLOPS_API_KEY is set via kubesentiment-staging-secrets
+  # MLOPS_API_KEY is set via KubeSense-staging-secrets
 
   MLOPS_ALLOWED_ORIGINS: "https://staging.example.com,https://staging-app.example.com"
   MLOPS_CORS_ORIGINS: "https://staging.example.com"
@@ -55,10 +55,10 @@ data:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: kubesentiment-staging-secrets
+  name: KubeSense-staging-secrets
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
     environment: staging
 type: Opaque
 stringData:
@@ -70,35 +70,35 @@ stringData:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubesentiment-staging
+  name: KubeSense-staging
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
     environment: staging
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: kubesentiment
+      app: KubeSense
       environment: staging
   template:
     metadata:
       labels:
-        app: kubesentiment
+        app: KubeSense
         environment: staging
     spec:
       containers:
-        - name: kubesentiment
-          image: kubesentiment:staging
+        - name: KubeSense
+          image: KubeSense:staging
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
               name: http
           envFrom:
             - configMapRef:
-                name: kubesentiment-staging-config
+                name: KubeSense-staging-config
             - secretRef:
-                name: kubesentiment-staging-secrets
+                name: KubeSense-staging-secrets
           resources:
             requests:
               cpu: 500m
@@ -124,13 +124,13 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: kubesentiment-staging-hpa
+  name: KubeSense-staging-hpa
   namespace: default
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: kubesentiment-staging
+    name: KubeSense-staging
   minReplicas: 2
   maxReplicas: 5
   metrics:

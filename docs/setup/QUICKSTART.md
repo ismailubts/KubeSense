@@ -13,8 +13,8 @@ helm version              # Helm package manager
 ### 2️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/aismail/KubeSentiment.git
-cd KubeSentiment
+git clone https://github.com/ismailubts/KubeSense.git
+cd KubeSense
 ```
 
 ### 3️⃣ Launch Full Monitoring System

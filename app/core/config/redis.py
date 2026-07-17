@@ -68,7 +68,7 @@ class RedisConfig(BaseSettings):
         le=60,
     )
     redis_namespace: str = Field(
-        default="kubesentiment",
+        default="KubeSense",
         description="Redis key namespace prefix",
         min_length=1,
         max_length=50,

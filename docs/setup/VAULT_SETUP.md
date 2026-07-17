@@ -119,8 +119,8 @@ kubernetes_ca_cert = "$(kubectl get secret -n default \
 kubernetes_token_reviewer_jwt = "$(kubectl get secret -n default \
   $(kubectl get sa default -n default -o jsonpath='{.secrets[0].name}') \
   -o jsonpath='{.data.token}' | base64 -d)"
-github_org = "aismail"
-github_repository = "aismail/KubeSentiment"
+github_org = "ismailubts"
+github_repository = "ismailubts/KubeSense"
 EOF
 
 # Apply Terraform configuration
@@ -205,8 +205,8 @@ vault write auth/jwt-github/config \
 # Create role for GitHub Actions
 vault write auth/jwt-github/role/github-actions \
   role_type="jwt" \
-  bound_audiences="https://github.com/aismail" \
-  bound_claims=repository="aismail/KubeSentiment" \
+  bound_audiences="https://github.com/ismailubts" \
+  bound_claims=repository="ismailubts/KubeSense" \
   user_claim="actor" \
   policies="mlops-sentiment-admin" \
   ttl=1h

@@ -16,7 +16,7 @@ Environment-specific configurations for development, staging, and production dep
 
 ## Overview
 
-KubeSentiment supports three primary deployment environments:
+KubeSense supports three primary deployment environments:
 
 | Environment | Use Case | Profile | Services | Replicas | Autoscaling |
 |------------|----------|---------|----------|----------|-------------|
@@ -756,4 +756,4 @@ export MLOPS_VAULT_ADDR=https://vault.example.com
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>

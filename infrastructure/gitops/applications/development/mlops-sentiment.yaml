@@ -9,10 +9,10 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: kubesentiment
+  project: KubeSense
 
   source:
-    repoURL: https://github.com/aismail/KubeSentiment.git
+    repoURL: https://github.com/ismailubts/KubeSense.git
     targetRevision: develop  # Track develop branch for development environment
     path: helm/mlops-sentiment
     helm:
@@ -22,7 +22,7 @@ spec:
         - values-dev.yaml
       parameters:
         - name: image.repository
-          value: ghcr.io/aismail/kubesentiment
+          value: ghcr.io/ismailubts/KubeSense
         - name: image.tag
           value: develop  # Will be updated by CI
         - name: replicaCount

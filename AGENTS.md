@@ -1,7 +1,7 @@
-# AGENTS.md - AI Agent Guide for KubeSentiment
+# AGENTS.md - AI Agent Guide for KubeSense
 
 > **Last Updated:** 2025-12-04
-> **Purpose:** This document provides AI agents with a comprehensive understanding of the KubeSentiment project, including its architecture, subsystems, build commands, and development workflows.
+> **Purpose:** This document provides AI agents with a comprehensive understanding of the KubeSense project, including its architecture, subsystems, build commands, and development workflows.
 
 ---
 
@@ -21,7 +21,7 @@
 
 ## Project Overview
 
-**KubeSentiment** is a production-ready, cloud-native MLOps sentiment analysis microservice built with FastAPI and designed for Kubernetes deployments.
+**KubeSense** is a production-ready, cloud-native MLOps sentiment analysis microservice built with FastAPI and designed for Kubernetes deployments.
 
 ### Core Purpose
 
@@ -56,7 +56,7 @@ Provides real-time sentiment analysis using state-of-the-art transformer models 
 
 ### Application Architecture
 
-KubeSentiment follows a **modular, layered architecture** with clear separation of concerns:
+KubeSense follows a **modular, layered architecture** with clear separation of concerns:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -330,7 +330,7 @@ infrastructure/
 ## Directory Structure
 
 ```
-KubeSentiment/
+KubeSense/
 ├── app/                          # Main application code
 │   ├── api/                      # API routes, middleware, schemas
 │   │   ├── middleware/           # Custom middleware (auth, logging, metrics)
@@ -561,7 +561,7 @@ python -m uvicorn app.main:app --reload
 
 ### Configuration System
 
-KubeSentiment uses a **profile-based configuration system** (see ADR-009) with the following hierarchy:
+KubeSense uses a **profile-based configuration system** (see ADR-009) with the following hierarchy:
 
 1. **Profile Defaults** (lowest priority)
 2. **.env file**

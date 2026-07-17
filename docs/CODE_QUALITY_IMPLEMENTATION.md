@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document summarizes the code quality automation implementation for the KubeSentiment project, completed as part of task 4.2.
+This document summarizes the code quality automation implementation for the KubeSense project, completed as part of task 4.2.
 
 ## Implementation Date
 

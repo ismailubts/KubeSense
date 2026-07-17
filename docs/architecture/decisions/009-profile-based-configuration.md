@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-03-15
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-KubeSentiment needs to run across multiple environments with different configurations:
+KubeSense needs to run across multiple environments with different configurations:
 
 1. **Multiple environments**: Local, development, staging, production
 2. **Configuration complexity**: 50+ configuration parameters across 10+ domains
@@ -553,7 +553,7 @@ class Settings(BaseConfig):
             vault = VaultClient(self.vault.url, self.vault.role)
 
             # Override sensitive settings from Vault
-            secrets = vault.get_secret("kubesentiment/config")
+            secrets = vault.get_secret("KubeSense/config")
             self.redis.password = secrets.get("redis_password")
             self.kafka.password = secrets.get("kafka_password")
 ```

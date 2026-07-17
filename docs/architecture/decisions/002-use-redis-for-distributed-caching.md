@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-01-20
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-As we scale KubeSentiment horizontally with multiple pod replicas, we need a caching strategy that:
+As we scale KubeSense horizontally with multiple pod replicas, we need a caching strategy that:
 - Works across distributed instances
 - Reduces redundant model inference operations
 - Improves response times for repeated requests

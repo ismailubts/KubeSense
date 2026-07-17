@@ -1,6 +1,6 @@
-# Contributing to KubeSentiment
+# Contributing to KubeSense
 
-Thanks for your interest in contributing. This guide covers setup, quality checks, and the pull request process for KubeSentiment.
+Thanks for your interest in contributing. This guide covers setup, quality checks, and the pull request process for KubeSense.
 
 **Maintainer:** Aismail · [aismail@7kingscode.com](mailto:aismail@7kingscode.com)
 
@@ -26,8 +26,8 @@ You can contribute in several ways:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/aismail/KubeSentiment.git
-    cd KubeSentiment
+    git clone https://github.com/ismailubts/KubeSense.git
+    cd KubeSense
     ```
 
 2.  **Install dependencies:**
@@ -118,7 +118,7 @@ If you use Visual Studio Code, we have a recommended setup for an optimal develo
 
 ## Logging Guidelines
 
-KubeSentiment uses structured logging throughout the codebase to enable better observability, debugging, and log aggregation. Please follow these guidelines when adding logging to your code.
+KubeSense uses structured logging throughout the codebase to enable better observability, debugging, and log aggregation. Please follow these guidelines when adding logging to your code.
 
 ### Using Structured Logging
 

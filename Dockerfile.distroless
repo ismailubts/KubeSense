@@ -75,10 +75,11 @@ ARG REVISION
 LABEL org.opencontainers.image.created="${BUILDTIME}"
 LABEL org.opencontainers.image.version="${VERSION}"
 LABEL org.opencontainers.image.revision="${REVISION}"
-LABEL org.opencontainers.image.title="MLOps Sentiment Analysis - Distroless"
-LABEL org.opencontainers.image.description="Hardened sentiment analysis service with minimal attack surface"
-LABEL org.opencontainers.image.source="https://github.com/aismail/KubeSentiment"
+LABEL org.opencontainers.image.title="KubeSense API · Aismail - Distroless"
+LABEL org.opencontainers.image.description="Hardened sentiment analysis service by Aismail"
+LABEL org.opencontainers.image.source="https://github.com/ismailubts/KubeSense"
 LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.authors="Aismail <aismail@7kingscode.com>"
 LABEL org.opencontainers.image.base.name="gcr.io/distroless/python3-debian12"
 
 # Environment variables
@@ -131,10 +132,11 @@ ARG REVISION
 LABEL org.opencontainers.image.created="${BUILDTIME}"
 LABEL org.opencontainers.image.version="${VERSION}"
 LABEL org.opencontainers.image.revision="${REVISION}"
-LABEL org.opencontainers.image.title="MLOps Sentiment Analysis - Distroless (Debug)"
-LABEL org.opencontainers.image.description="Distroless image with debugging tools - NOT for production"
-LABEL org.opencontainers.image.source="https://github.com/aismail/KubeSentiment"
+LABEL org.opencontainers.image.title="KubeSense API · Aismail - Distroless (Debug)"
+LABEL org.opencontainers.image.description="Distroless debug image by Aismail - NOT for production"
+LABEL org.opencontainers.image.source="https://github.com/ismailubts/KubeSense"
 LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.authors="Aismail <aismail@7kingscode.com>"
 LABEL org.opencontainers.image.base.name="gcr.io/distroless/python3-debian12:debug"
 
 # Environment variables

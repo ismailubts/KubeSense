@@ -1,7 +1,7 @@
-# CLAUDE.md - AI Assistant Guide for KubeSentiment
+# CLAUDE.md - AI Assistant Guide for KubeSense
 
 > **Last Updated:** 2025-12-15
-> **Purpose:** This document provides AI assistants with comprehensive guidance on the KubeSentiment codebase structure, development workflows, and key conventions to follow when making contributions.
+> **Purpose:** This document provides AI assistants with comprehensive guidance on the KubeSense codebase structure, development workflows, and key conventions to follow when making contributions.
 
 ---
 
@@ -24,7 +24,7 @@
 
 ## Project Overview
 
-**KubeSentiment** is a production-grade, cloud-native MLOps microservice for sentiment analysis built with FastAPI. It demonstrates modern MLOps best practices including observability, scalability, security, and automation.
+**KubeSense** is a production-grade, cloud-native MLOps microservice for sentiment analysis built with FastAPI. It demonstrates modern MLOps best practices including observability, scalability, security, and automation.
 
 ### Core Technologies
 
@@ -56,7 +56,7 @@
 ## Repository Structure
 
 ```
-KubeSentiment/
+KubeSense/
 ├── app/                          # Main application code
 │   ├── api/                      # API routes and endpoints
 │   │   ├── routes/               # Individual route modules
@@ -155,7 +155,7 @@ KubeSentiment/
 
 ### Application Architecture
 
-KubeSentiment follows a **modular, layered architecture** with clear separation of concerns:
+KubeSense follows a **modular, layered architecture** with clear separation of concerns:
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -211,8 +211,8 @@ KubeSentiment follows a **modular, layered architecture** with clear separation 
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/aismail/KubeSentiment.git
-cd KubeSentiment
+git clone https://github.com/ismailubts/KubeSense.git
+cd KubeSense
 
 # 2. Create virtual environment
 python -m venv .venv
@@ -433,7 +433,7 @@ pytest tests/unit/test_api.py::TestPredictEndpoint::test_predict_success
 
 ### Profile-Based Configuration System
 
-KubeSentiment uses a **profile-based configuration system** (ADR-009) with modular domain-specific settings.
+KubeSense uses a **profile-based configuration system** (ADR-009) with modular domain-specific settings.
 
 #### Configuration Profiles
 

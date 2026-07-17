@@ -1,4 +1,4 @@
-# KubeSentiment Troubleshooting Guide
+# KubeSense Troubleshooting Guide
 
 > **Last Updated:** 2025-11-19
 > **Quick Fix Time:** 5-30 minutes for most issues
@@ -388,7 +388,7 @@ docker-compose logs redis
 
 # 6. Reset Redis
 docker-compose down
-docker volume rm kubesentiment_redis_data  # Remove data
+docker volume rm KubeSense_redis_data  # Remove data
 docker-compose up -d redis
 ```
 

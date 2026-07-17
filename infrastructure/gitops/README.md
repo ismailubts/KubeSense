@@ -88,7 +88,7 @@ Update `argocd/argocd-config.yaml`:
 
 ```yaml
 repositories: |
-  - url: https://github.com/aismail/KubeSentiment.git
+  - url: https://github.com/ismailubts/KubeSense.git
 ```
 
 ### Image Registry
@@ -97,7 +97,7 @@ Update `environments/*/values.yaml`:
 
 ```yaml
 image:
-  repository: ghcr.io/aismail/kubesentiment
+  repository: ghcr.io/ismailubts/KubeSense
   tag: v1.0.0 # Updated by CI
 ```
 
@@ -108,11 +108,11 @@ Update `applications/*/mlops-sentiment.yaml`:
 ```yaml
 spec:
   source:
-    repoURL: https://github.com/aismail/KubeSentiment.git
+    repoURL: https://github.com/ismailubts/KubeSense.git
     helm:
       parameters:
         - name: image.repository
-          value: ghcr.io/aismail/kubesentiment
+          value: ghcr.io/ismailubts/KubeSense
 ```
 
 ## Usage
@@ -252,7 +252,7 @@ argocd app sync mlops-sentiment-production --prune
 
 ```bash
 # Check repository connection
-argocd repo get https://github.com/aismail/KubeSentiment.git
+argocd repo get https://github.com/ismailubts/KubeSense.git
 
 # Update credentials
 kubectl edit secret -n argocd <secret-name>

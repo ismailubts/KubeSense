@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-KubeSentiment Development Environment Setup Script
+KubeSense Development Environment Setup Script
 
-This script automates the setup of a local development environment for KubeSentiment.
+This script automates the setup of a local development environment for KubeSense.
 It handles virtual environment creation, dependency installation, and pre-commit hook setup.
 
 Usage:
@@ -444,7 +444,7 @@ def main() -> int:
         Exit code (0 for success, 1 for failure)
     """
     parser = argparse.ArgumentParser(
-        description="Set up KubeSentiment development environment",
+        description="Set up KubeSense development environment",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -497,7 +497,7 @@ Examples:
     try:
         # Determine project root
         project_root = Path(__file__).parent.parent.parent
-        print_header(f"KubeSentiment Development Environment Setup")
+        print_header(f"KubeSense Development Environment Setup")
         print_info(f"Project root: {project_root}")
 
         # Check Python version

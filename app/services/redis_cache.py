@@ -46,7 +46,7 @@ class RedisCacheClient(ICacheClient):
         """
         self.pool = ConnectionPool(**kwargs)
         self.client = redis.Redis(connection_pool=self.pool)
-        self.namespace = kwargs.get("namespace", "kubesentiment")
+        self.namespace = kwargs.get("namespace", "KubeSense")
         self._test_connection()
 
     def _test_connection(self):

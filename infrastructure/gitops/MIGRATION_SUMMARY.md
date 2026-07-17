@@ -2,7 +2,7 @@
 
 ## Overview
 
-Successfully migrated KubeSentiment infrastructure deployment from direct Helm upgrades to GitOps using ArgoCD.
+Successfully migrated KubeSense infrastructure deployment from direct Helm upgrades to GitOps using ArgoCD.
 
 ## What Changed
 

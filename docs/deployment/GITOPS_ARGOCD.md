@@ -1,6 +1,6 @@
 # GitOps Deployment with ArgoCD
 
-This document describes the GitOps-based deployment architecture for KubeSentiment using ArgoCD.
+This document describes the GitOps-based deployment architecture for KubeSense using ArgoCD.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ This document describes the GitOps-based deployment architecture for KubeSentime
 
 ## Overview
 
-KubeSentiment uses **GitOps** principles for deployments, with ArgoCD as the continuous delivery tool. This approach provides:
+KubeSense uses **GitOps** principles for deployments, with ArgoCD as the continuous delivery tool. This approach provides:
 
 - ✅ **Declarative deployments** - All configuration in Git
 - ✅ **Automated synchronization** - ArgoCD automatically applies changes
@@ -164,10 +164,10 @@ kubectl apply -f - <<EOF
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: kubesentiment
+  name: KubeSense
   namespace: argocd
 spec:
-  description: KubeSentiment MLOps Project
+  description: KubeSense MLOps Project
   sourceRepos: ['*']
   destinations:
   - namespace: mlops-sentiment-dev
@@ -417,7 +417,7 @@ argocd repo list
 kubectl edit secret -n argocd <repo-secret>
 
 # Test connection
-argocd repo get https://github.com/aismail/KubeSentiment.git
+argocd repo get https://github.com/ismailubts/KubeSense.git
 ```
 
 ### ArgoCD Not Detecting Changes
@@ -427,7 +427,7 @@ argocd repo get https://github.com/aismail/KubeSentiment.git
 argocd app get mlops-sentiment-production --refresh
 
 # Check repository webhook (if configured)
-argocd app list --repo https://github.com/aismail/KubeSentiment.git
+argocd app list --repo https://github.com/ismailubts/KubeSense.git
 
 # Check ArgoCD controller logs
 kubectl logs -n argocd -l app.kubernetes.io/name=argocd-application-controller

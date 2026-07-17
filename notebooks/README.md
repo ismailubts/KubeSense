@@ -1,6 +1,6 @@
-# 📚 KubeSentiment Notebooks
+# 📚 KubeSense Notebooks
 
-Interactive Jupyter notebooks that provide comprehensive exploration, analysis, and guidance for the KubeSentiment MLOps sentiment analysis project.
+Interactive Jupyter notebooks that provide comprehensive exploration, analysis, and guidance for the KubeSense MLOps sentiment analysis project.
 
 ## 🎯 Notebook Overview
 
@@ -82,7 +82,7 @@ jupyter notebook notebooks/
 
 ### For Developers
 
-- **API Integration**: Learn how to integrate with KubeSentiment API
+- **API Integration**: Learn how to integrate with KubeSense API
 - **Testing Strategies**: Understand comprehensive testing approaches
 - **Development Workflow**: Master MLOps development practices
 - **Debugging Techniques**: Learn systematic troubleshooting
@@ -103,7 +103,7 @@ jupyter notebook notebooks/
 
 ### For Product Managers
 
-- **Feature Understanding**: Learn what KubeSentiment can do
+- **Feature Understanding**: Learn what KubeSense can do
 - **Performance Benchmarks**: Understand scalability and costs
 - **Production Readiness**: Assess deployment readiness
 - **Business Metrics**: Monitor business impact
@@ -142,7 +142,7 @@ jupyter notebook notebooks/
 
 ### Real Integration
 
-- **API Endpoints**: Connect to running KubeSentiment instances
+- **API Endpoints**: Connect to running KubeSense instances
 - **Configuration Files**: Analyze actual project configuration
 - **Test Results**: Display real test coverage and results
 - **Code Analysis**: Static analysis of actual codebase
@@ -306,6 +306,6 @@ matplotlib.use('Agg')
 
 ---
 
-**🎯 Ready to explore KubeSentiment? Start with [tutorials/01_getting_started.ipynb](tutorials/01_getting_started.ipynb)!**
+**🎯 Ready to explore KubeSense? Start with [tutorials/01_getting_started.ipynb](tutorials/01_getting_started.ipynb)!**
 
 *Built with ❤️ for the MLOps community*

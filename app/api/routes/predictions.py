@@ -97,6 +97,9 @@ async def predict_sentiment(
 
         # Add backend to response
         result["backend"] = backend
+        result.setdefault("model_name", settings.model.model_name)
+        result.setdefault("text_length", len(payload.text.strip()))
+        result.setdefault("cached", result.get("cached", False))
 
         # Stream prediction to data lake asynchronously
         if settings.data_lake.data_lake_enabled:

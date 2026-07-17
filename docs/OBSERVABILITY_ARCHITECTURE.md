@@ -1,10 +1,10 @@
-# KubeSentiment Observability Architecture
+# KubeSense Observability Architecture
 
 ## System Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                          KubeSentiment Application                       │
+│                          KubeSense Application                       │
 │                                                                           │
 │  ┌──────────────────────────────────────────────────────────────────┐  │
 │  │                        FastAPI Application                        │  │

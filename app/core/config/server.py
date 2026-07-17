@@ -19,7 +19,7 @@ class ServerConfig(BaseSettings):
 
     # Application metadata
     app_name: str = Field(
-        default="KubeSentiment API",
+        default="KubeSense API · Aismail",
         description="Application name",
         min_length=1,
         max_length=100,

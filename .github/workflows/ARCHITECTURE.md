@@ -1,13 +1,13 @@
 # Workflow Architecture
 
-This document provides a visual overview of the KubeSentiment GitHub Actions workflow architecture.
+This document provides a visual overview of the KubeSense GitHub Actions workflow architecture.
 
 ## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         GitHub Actions Workflows                             │
-│                          KubeSentiment Project                               │
+│                          KubeSense Project                               │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────┐

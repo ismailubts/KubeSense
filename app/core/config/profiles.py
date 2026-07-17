@@ -96,10 +96,10 @@ class DevelopmentProfile(ConfigProfile):
             # Performance features (simplified for dev)
             "MLOPS_ASYNC_BATCH_ENABLED": "false",
             "MLOPS_ANOMALY_BUFFER_ENABLED": "false",
-            # Security (relaxed for development)
-            "MLOPS_API_KEY": "",
-            "MLOPS_ALLOWED_ORIGINS": "*",
-            "MLOPS_CORS_ORIGINS": "*",
+            # Security (relaxed for development; omit API key so auth is disabled.
+            # Explicit localhost origins — wildcard '*' is rejected by SecurityConfig.)
+            "MLOPS_ALLOWED_ORIGINS": '["http://localhost:3000","http://localhost:8000","http://127.0.0.1:8000"]',
+            "MLOPS_CORS_ORIGINS": '["http://localhost:3000","http://localhost:8000","http://127.0.0.1:8000"]',
             # Model configuration (smaller cache for dev)
             "MLOPS_PREDICTION_CACHE_MAX_SIZE": "100",
             "MLOPS_PREDICTION_CACHE_ENABLED": "true",  # Enabled for testing

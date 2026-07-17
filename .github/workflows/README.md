@@ -1,6 +1,6 @@
 # GitHub Actions Workflows
 
-This directory contains all GitHub Actions workflows for the KubeSentiment project. The workflows are organized into reusable components and specialized workflows for different purposes.
+This directory contains all GitHub Actions workflows for the KubeSense project. The workflows are organized into reusable components and specialized workflows for different purposes.
 
 ## Table of Contents
 

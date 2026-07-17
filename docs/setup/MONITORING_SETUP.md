@@ -1,6 +1,6 @@
 # Monitoring Setup Guide
 
-This guide provides detailed instructions for setting up the complete monitoring stack for KubeSentiment.
+This guide provides detailed instructions for setting up the complete monitoring stack for KubeSense.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ This guide provides detailed instructions for setting up the complete monitoring
 
 ## Overview
 
-The KubeSentiment monitoring stack includes:
+The KubeSense monitoring stack includes:
 
 - **Prometheus**: Metrics collection, storage, and alerting engine
 - **Grafana**: Visualization and dashboarding
@@ -233,7 +233,7 @@ alertmanager:
       - name: 'default'
         slack_configs:
           - channel: '#monitoring'
-            title: 'KubeSentiment Alert'
+            title: 'KubeSense Alert'
             text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
 
       - name: 'critical-alerts'

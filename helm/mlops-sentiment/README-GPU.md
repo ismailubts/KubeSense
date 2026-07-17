@@ -1,4 +1,4 @@
-# GPU Support for KubeSentiment
+# GPU Support for KubeSense
 
 ## Quick Start
 

@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kubesentiment-scalability-config
+  name: KubeSense-scalability-config
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
     component: config
 data:
   # ===== Configuration Profile =====
@@ -20,7 +20,7 @@ data:
   MLOPS_REDIS_PORT: "6379"
   MLOPS_REDIS_DB: "0"
   MLOPS_REDIS_MAX_CONNECTIONS: "50"
-  MLOPS_REDIS_NAMESPACE: "kubesentiment"
+  MLOPS_REDIS_NAMESPACE: "KubeSense"
   MLOPS_REDIS_PREDICTION_CACHE_TTL: "3600"
   MLOPS_REDIS_FEATURE_CACHE_TTL: "1800"
 
@@ -33,7 +33,7 @@ data:
   # Distributed Kafka Consumer Configuration
   MLOPS_KAFKA_ENABLED: "true"
   MLOPS_KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
-  MLOPS_KAFKA_CONSUMER_GROUP: "kubesentiment_consumer_group"
+  MLOPS_KAFKA_CONSUMER_GROUP: "KubeSense_consumer_group"
   MLOPS_KAFKA_TOPIC: "sentiment_requests"
   MLOPS_KAFKA_PARTITION_ASSIGNMENT_STRATEGY: "roundrobin"
   MLOPS_KAFKA_CONSUMER_THREADS: "4"
@@ -52,16 +52,16 @@ data:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: kubesentiment-hpa
+  name: KubeSense-hpa
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
     component: autoscaling
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: kubesentiment
+    name: KubeSense
   minReplicas: 2
   maxReplicas: 10
   metrics:
@@ -119,15 +119,15 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: kubesentiment-pdb
+  name: KubeSense-pdb
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: kubesentiment
+      app: KubeSense
   maxUnavailable: 1
 
 ---
@@ -135,10 +135,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: kubesentiment-lb
+  name: KubeSense-lb
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
     component: loadbalancer
   annotations:
     # AWS Load Balancer annotations (adjust for your cloud provider)
@@ -167,21 +167,21 @@ spec:
       targetPort: 8000
       protocol: TCP
   selector:
-    app: kubesentiment
+    app: KubeSense
 
 ---
 # Network Policy for security
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: kubesentiment-netpol
+  name: KubeSense-netpol
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
 spec:
   podSelector:
     matchLabels:
-      app: kubesentiment
+      app: KubeSense
   policyTypes:
     - Ingress
     - Egress
@@ -251,16 +251,16 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubesentiment
+  name: KubeSense
   namespace: default
   labels:
-    app: kubesentiment
+    app: KubeSense
     version: "1.0.0"
 spec:
   replicas: 3  # Initial replicas (HPA will adjust)
   selector:
     matchLabels:
-      app: kubesentiment
+      app: KubeSense
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -270,7 +270,7 @@ spec:
   template:
     metadata:
       labels:
-        app: kubesentiment
+        app: KubeSense
         version: "1.0.0"
       annotations:
         prometheus.io/scrape: "true"
@@ -292,7 +292,7 @@ spec:
                     - key: app
                       operator: In
                       values:
-                        - kubesentiment
+                        - KubeSense
                 topologyKey: kubernetes.io/hostname
 
         # Prefer nodes with more resources
@@ -307,8 +307,8 @@ spec:
                       - compute-optimized
 
       containers:
-        - name: kubesentiment
-          image: kubesentiment:latest
+        - name: KubeSense
+          image: KubeSense:latest
           imagePullPolicy: IfNotPresent
 
           ports:
@@ -337,7 +337,7 @@ spec:
 
           envFrom:
             - configMapRef:
-                name: kubesentiment-scalability-config
+                name: KubeSense-scalability-config
 
           resources:
             requests:

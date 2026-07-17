@@ -2,7 +2,7 @@
 
 ## Overview
 
-Comprehensive test suite for the KubeSentiment MLOps service with organized structure for unit, integration, and performance tests.
+Comprehensive test suite for the KubeSense MLOps service with organized structure for unit, integration, and performance tests.
 
 ## Test Structure
 

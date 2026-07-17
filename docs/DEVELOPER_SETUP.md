@@ -1,4 +1,4 @@
-# ⚠️ DEPRECATED - KubeSentiment Developer Setup Guide
+# ⚠️ DEPRECATED - KubeSense Developer Setup Guide
 
 > **This document has been partially superseded.** For configuration setup, see **[docs/configuration/QUICK_START.md](docs/configuration/QUICK_START.md)**.
 >
@@ -10,7 +10,7 @@
 
 ## Overview
 
-This guide walks you through setting up KubeSentiment for local development. After completing this guide, you'll have a fully functional development environment with all tools, dependencies, and pre-commit hooks installed.
+This guide walks you through setting up KubeSense for local development. After completing this guide, you'll have a fully functional development environment with all tools, dependencies, and pre-commit hooks installed.
 
 ## Prerequisites
 
@@ -46,8 +46,8 @@ The fastest way to set up your development environment:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/aismail/KubeSentiment.git
-cd KubeSentiment
+git clone https://github.com/ismailubts/KubeSense.git
+cd KubeSense
 ```
 
 ### 2. Run the Setup Script
@@ -610,4 +610,4 @@ If you encounter any issues, please open a GitHub issue with:
 ---
 
 **Last Updated:** 2025-11-19
-**Maintainer:** AI Engineering Team
+**Maintainer:** Aismail <aismail@7kingscode.com>

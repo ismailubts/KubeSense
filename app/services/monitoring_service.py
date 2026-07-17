@@ -90,9 +90,15 @@ class MonitoringService:
         model_ready = model.is_ready()
         secrets_healthy = secret_manager.is_healthy()
         status = "healthy" if model_ready and secrets_healthy else "unhealthy"
+        backend = getattr(model, "backend", None) or (
+            "onnx" if self.settings.model.onnx_model_path else "pytorch"
+        )
         return {
             "status": status,
-            "model_status": "available" if model_ready else "unavailable"
+            "model_status": "loaded" if model_ready else "unavailable",
+            "version": self.settings.server.app_version,
+            "backend": str(backend),
+            "timestamp": time.time(),
         }
 
     async def get_readiness(self, model: Any) -> bool:

@@ -1,8 +1,8 @@
-# KubeSentiment Observability Guide
+# KubeSense Observability Guide
 
 ## Overview
 
-This guide provides comprehensive documentation for the observability stack integrated into KubeSentiment. The stack follows MLOps best practices and implements the three pillars of observability: **Metrics**, **Logs**, and **Traces**.
+This guide provides comprehensive documentation for the observability stack integrated into KubeSense. The stack follows MLOps best practices and implements the three pillars of observability: **Metrics**, **Logs**, and **Traces**.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ This guide provides comprehensive documentation for the observability stack inte
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                   KubeSentiment Application                  │
+│                   KubeSense Application                  │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
 │  │ FastAPI  │  │Structured│  │OpenTelem.│  │Prometheus│   │
 │  │   App    │→ │  Logging │→ │ Tracing  │→ │  Client  │   │

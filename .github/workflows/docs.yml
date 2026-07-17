@@ -157,7 +157,7 @@ jobs:
         run: |
           if [ ! -f mkdocs.yml ]; then
             cat > mkdocs.yml << EOF
-          site_name: KubeSentiment Documentation
+          site_name: KubeSense Documentation
           site_description: Production-grade MLOps microservice for sentiment analysis
           site_url: https://github.com/${{ github.repository }}
           repo_url: https://github.com/${{ github.repository }}
@@ -233,4 +233,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          cname: kubesentiment.example.com  # Optional: configure your custom domain
+          cname: KubeSense.example.com  # Optional: configure your custom domain

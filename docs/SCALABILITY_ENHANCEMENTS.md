@@ -1,10 +1,10 @@
 # Scalability Enhancements
 
-This document describes the comprehensive scalability enhancements implemented in KubeSentiment to support high-throughput, distributed deployments with horizontal scaling capabilities.
+This document describes the comprehensive scalability enhancements implemented in KubeSense to support high-throughput, distributed deployments with horizontal scaling capabilities.
 
 ## Overview
 
-The scalability enhancements enable KubeSentiment to:
+The scalability enhancements enable KubeSense to:
 
 - Handle **10,000+ requests per second** across distributed instances
 - Automatically scale from **2 to 10+ replicas** based on load
@@ -99,7 +99,7 @@ Enhanced Kafka consumer with distributed coordination for horizontal scaling acr
 # Environment variables
 MLOPS_KAFKA_ENABLED=true
 MLOPS_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-MLOPS_KAFKA_CONSUMER_GROUP=kubesentiment_consumer_group
+MLOPS_KAFKA_CONSUMER_GROUP=KubeSense_consumer_group
 MLOPS_KAFKA_TOPIC=sentiment_requests
 MLOPS_KAFKA_PARTITION_ASSIGNMENT_STRATEGY=roundrobin
 MLOPS_KAFKA_CONSUMER_THREADS=4
@@ -196,7 +196,7 @@ MLOPS_REDIS_HOST=redis
 MLOPS_REDIS_PORT=6379
 MLOPS_REDIS_DB=0
 MLOPS_REDIS_MAX_CONNECTIONS=50
-MLOPS_REDIS_NAMESPACE=kubesentiment
+MLOPS_REDIS_NAMESPACE=KubeSense
 MLOPS_REDIS_PREDICTION_CACHE_TTL=3600
 MLOPS_REDIS_FEATURE_CACHE_TTL=1800
 ```
@@ -412,13 +412,13 @@ kubectl get svc
 kubectl get pods -o wide
 
 # Monitor scaling events
-kubectl get hpa kubesentiment-hpa --watch
+kubectl get hpa KubeSense-hpa --watch
 
 # View logs
-kubectl logs -f deployment/kubesentiment
+kubectl logs -f deployment/KubeSense
 
 # Scale manually (if needed)
-kubectl scale deployment kubesentiment --replicas=5
+kubectl scale deployment KubeSense --replicas=5
 ```
 
 ---

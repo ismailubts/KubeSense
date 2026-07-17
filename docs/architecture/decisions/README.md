@@ -1,6 +1,6 @@
 # Architecture Decision Records (ADRs)
 
-This directory contains Architecture Decision Records (ADRs) for the KubeSentiment project.
+This directory contains Architecture Decision Records (ADRs) for the KubeSense project.
 
 ## What is an ADR?
 

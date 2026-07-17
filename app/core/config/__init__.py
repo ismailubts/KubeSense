@@ -1,5 +1,5 @@
 """
-Configuration management package for KubeSentiment.
+Configuration management package for KubeSense.
 
 This package provides domain-specific configuration classes that are composed
 into a root Settings class, replacing the previous monolithic configuration.

@@ -1,6 +1,6 @@
 # Configuration Architecture
 
-Deep dive into KubeSentiment's domain-driven configuration system.
+Deep dive into KubeSense's domain-driven configuration system.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ Deep dive into KubeSentiment's domain-driven configuration system.
 
 ## Overview
 
-KubeSentiment uses a **domain-driven configuration architecture** that:
+KubeSense uses a **domain-driven configuration architecture** that:
 
 - **Separates concerns** - Each domain (Kafka, Redis, Model, etc.) has its own config class
 - **Maintains compatibility** - 100% backward compatible with existing code via delegation properties
@@ -754,4 +754,4 @@ See **[Migration Guide](MIGRATION.md)** for detailed upgrade instructions.
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>

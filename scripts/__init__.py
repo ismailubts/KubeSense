@@ -1,1 +1,1 @@
-"""Scripts package for KubeSentiment utilities."""
+"""Scripts package for KubeSense utilities."""

@@ -1,7 +1,7 @@
 # Distroless Docker Image Deployment Guide
 
 > **Last Updated:** 2025-01-27
-> **Purpose:** Guide for building, deploying, and managing the distroless Docker image variant of KubeSentiment.
+> **Purpose:** Guide for building, deploying, and managing the distroless Docker image variant of KubeSense.
 
 ---
 
@@ -22,7 +22,7 @@
 
 ## Overview
 
-The distroless Docker image provides a **hardened, minimal runtime** for the KubeSentiment service with:
+The distroless Docker image provides a **hardened, minimal runtime** for the KubeSense service with:
 
 - **~30-50% smaller image size** compared to standard Python images
 - **Minimal attack surface** - no shell, package managers, or unnecessary tools

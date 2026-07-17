@@ -1,4 +1,4 @@
-# KubeSentiment API Changelog
+# KubeSense API Changelog
 
 > **Current Version:** v1.0.0
 > **Release Date:** 2025-11-19
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This document tracks all changes to the KubeSentiment API, including new endpoints, modifications to existing endpoints, deprecations, and breaking changes. Follow [Semantic Versioning](https://semver.org/) principles.
+This document tracks all changes to the KubeSense API, including new endpoints, modifications to existing endpoints, deprecations, and breaking changes. Follow [Semantic Versioning](https://semver.org/) principles.
 
 ---
 
@@ -14,7 +14,7 @@ This document tracks all changes to the KubeSentiment API, including new endpoin
 
 ### Release Highlights
 
-- **Initial Production Release** of KubeSentiment API
+- **Initial Production Release** of KubeSense API
 - Comprehensive sentiment analysis service with 20+ endpoints
 - Full async batch processing support with 85% throughput improvement
 - Redis caching for sub-50ms cached response latency
@@ -346,7 +346,7 @@ N/A - Initial release
 
 ### Contact
 
-- **GitHub Issues**: https://github.com/aismail/KubeSentiment/issues
+- **GitHub Issues**: https://github.com/ismailubts/KubeSense/issues
 - **Documentation**: See `/docs` directory
 - **ADRs**: See `docs/architecture/decisions/`
 
@@ -363,4 +363,4 @@ N/A - Initial release
 ---
 
 **Last Updated:** 2025-11-19
-**Maintainer:** AI Engineering Team
+**Maintainer:** Aismail <aismail@7kingscode.com>

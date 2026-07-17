@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document provides a comprehensive cost analysis for running KubeSentiment on GPU vs CPU infrastructure, helping you make informed decisions about hardware selection for production deployments.
+This document provides a comprehensive cost analysis for running KubeSense on GPU vs CPU infrastructure, helping you make informed decisions about hardware selection for production deployments.
 
 ## Cost Models
 
@@ -328,4 +328,4 @@ DCGM_FI_PROF_PIPE_TENSOR_ACTIVE # Tensor core usage %
 
 **Document Version:** 1.0
 **Last Updated:** 2025-11-06
-**Prepared For:** KubeSentiment Production Deployment
+**Prepared For:** KubeSense Production Deployment

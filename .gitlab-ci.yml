@@ -1,4 +1,4 @@
-# GitLab CI/CD Pipeline for KubeSentiment
+# GitLab CI/CD Pipeline for KubeSense
 # Production-ready MLOps Sentiment Analysis Microservice
 
 # Pipeline stages
@@ -346,7 +346,7 @@ gitops:development:
   extends: .gitops_update_base
   environment:
     name: development
-    url: https://dev.kubesentiment.example.com
+    url: https://dev.KubeSense.example.com
     action: prepare
   variables:
     ENVIRONMENT: "development"
@@ -358,7 +358,7 @@ gitops:staging:
   extends: .gitops_update_base
   environment:
     name: staging
-    url: https://staging.kubesentiment.example.com
+    url: https://staging.KubeSense.example.com
     action: prepare
   variables:
     ENVIRONMENT: "staging"
@@ -370,7 +370,7 @@ gitops:production:
   extends: .gitops_update_base
   environment:
     name: production
-    url: https://kubesentiment.example.com
+    url: https://KubeSense.example.com
     action: prepare
   variables:
     ENVIRONMENT: "production"
@@ -440,7 +440,7 @@ deploy:development:emergency:
   extends: .deploy_base_legacy
   environment:
     name: development
-    url: https://dev.kubesentiment.example.com
+    url: https://dev.KubeSense.example.com
   variables:
     ENVIRONMENT: "development"
     NAMESPACE: "mlops-sentiment-dev"
@@ -454,7 +454,7 @@ deploy:staging:emergency:
   extends: .deploy_base_legacy
   environment:
     name: staging
-    url: https://staging.kubesentiment.example.com
+    url: https://staging.KubeSense.example.com
   variables:
     ENVIRONMENT: "staging"
     NAMESPACE: "mlops-sentiment-staging"
@@ -468,7 +468,7 @@ deploy:production:emergency:
   extends: .deploy_base_legacy
   environment:
     name: production
-    url: https://kubesentiment.example.com
+    url: https://KubeSense.example.com
   variables:
     ENVIRONMENT: "production"
     NAMESPACE: "mlops-sentiment"

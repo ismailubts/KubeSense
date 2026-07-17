@@ -2,12 +2,12 @@
 
 **Status:** Accepted
 **Date:** 2025-12-13
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 **Supersedes:** N/A
 
 ## Context
 
-The KubeSentiment application supports multiple model backends (PyTorch, ONNX) to balance accuracy and performance. As the application evolved, significant code duplication emerged between `ONNXSentimentAnalyzer` and `PyTorchSentimentAnalyzer`:
+The KubeSense application supports multiple model backends (PyTorch, ONNX) to balance accuracy and performance. As the application evolved, significant code duplication emerged between `ONNXSentimentAnalyzer` and `PyTorchSentimentAnalyzer`:
 
 1.  **Duplicate Logic**: Both classes implemented identical logic for:
     -   Text preprocessing (truncation, cleaning).

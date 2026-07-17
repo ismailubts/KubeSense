@@ -80,7 +80,7 @@ vault:
 
 image:
   registry: ghcr.io
-  repository: aismail/mlops-sentiment
+  repository: ismailubts/kubesense
   tag: "latest"
   pullPolicy: IfNotPresent
   pullSecrets: []

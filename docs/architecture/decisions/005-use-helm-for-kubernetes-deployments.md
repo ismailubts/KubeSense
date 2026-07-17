@@ -2,11 +2,11 @@
 
 **Status:** Accepted
 **Date:** 2024-01-25
-**Authors:** KubeSentiment Team
+**Authors:** Aismail <aismail@7kingscode.com>
 
 ## Context
 
-We need a deployment strategy for KubeSentiment on Kubernetes that provides:
+We need a deployment strategy for KubeSense on Kubernetes that provides:
 - Reproducible deployments across environments (dev/staging/prod)
 - Configuration management without duplicating YAML
 - Version control for deployment configurations

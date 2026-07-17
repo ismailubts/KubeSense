@@ -48,7 +48,7 @@ class KafkaConfig(BaseSettings):
         min_length=1,
     )
     kafka_consumer_group: str = Field(
-        default="kubesentiment_consumer",
+        default="KubeSense_consumer",
         description="Kafka consumer group ID",
         min_length=1,
     )

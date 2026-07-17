@@ -1,6 +1,6 @@
 # Configuration Documentation
 
-Complete guide to KubeSentiment's configuration system, including setup, architecture, profiles, and deployment.
+Complete guide to KubeSense's configuration system, including setup, architecture, profiles, and deployment.
 
 ## Quick Navigation
 
@@ -37,7 +37,7 @@ Complete guide to KubeSentiment's configuration system, including setup, archite
 
 ## Overview
 
-KubeSentiment uses a **profile-based configuration system** with **domain-driven architecture**. This means:
+KubeSense uses a **profile-based configuration system** with **domain-driven architecture**. This means:
 
 - **Profiles** provide environment-specific defaults (local, development, staging, production)
 - **Domains** organize settings by functionality (server, model, kafka, redis, etc.)
@@ -122,7 +122,7 @@ See **[Quick Start](QUICK_START.md)** for complete setup instructions.
 
 ## Configuration Profiles
 
-KubeSentiment includes 4 built-in profiles optimized for different environments:
+KubeSense includes 4 built-in profiles optimized for different environments:
 
 ### Local Profile
 - **When:** Quick local testing without external services
@@ -491,6 +491,6 @@ The following files have been updated to reference consolidated configuration do
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** KubeSentiment Team
+**Maintained By:** Aismail <aismail@7kingscode.com>
 
 For detailed information on any topic, see the linked documents above.

@@ -55,8 +55,10 @@ def create_app() -> FastAPI:
     app = FastAPI(
         title=settings.server.app_name,
         description=(
-            "KubeSentiment by Aismail — cloud-native sentiment analysis API powered by "
-            "transformer models, ONNX Runtime, and Kubernetes-ready MLOps tooling."
+            "**KubeSense** — cloud-native sentiment analysis by **Aismail** "
+            "(aismail@7kingscode.com). DistilBERT + ONNX Runtime, Redis/Kafka paths, "
+            "and Kubernetes-ready MLOps tooling. "
+            "[GitHub](https://github.com/ismailubts/KubeSense)"
         ),
         version=settings.server.app_version,
         debug=settings.server.debug,
@@ -67,12 +69,13 @@ def create_app() -> FastAPI:
         contact={
             "name": "Aismail",
             "email": "aismail@7kingscode.com",
-            "url": "https://github.com/aismail/KubeSentiment",
+            "url": "https://github.com/ismailubts/KubeSense",
         },
         license_info={
             "name": "MIT",
             "url": "https://opensource.org/licenses/MIT",
         },
+        terms_of_service="https://github.com/ismailubts/KubeSense#license",
     )
 
     # Add correlation ID middleware (first to ensure all logs have correlation ID)
@@ -269,6 +272,9 @@ def create_app() -> FastAPI:
             "service": settings.server.app_name,
             "version": settings.server.app_version,
             "status": "operational",
+            "maintainer": "Aismail",
+            "contact": "aismail@7kingscode.com",
+            "repository": "https://github.com/ismailubts/KubeSense",
             "docs_url": "/docs" if settings.server.debug else "disabled",
             "health_url": "/health" if settings.server.debug else "/api/v1/health",
         }

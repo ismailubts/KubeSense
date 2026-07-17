@@ -1,4 +1,4 @@
-# GPU Deployment Guide for KubeSentiment
+# GPU Deployment Guide for KubeSense
 
 ## Table of Contents
 1. [Prerequisites](#prerequisites)

@@ -1,6 +1,6 @@
-# KubeSentiment Architecture
+# KubeSense Architecture
 
-This document provides a comprehensive overview of the KubeSentiment project's architecture, from the application code to the infrastructure and deployment strategy.
+This document provides a comprehensive overview of the KubeSense project's architecture, from the application code to the infrastructure and deployment strategy.
 
 ## 1. Guiding Principles
 
@@ -15,7 +15,7 @@ The architecture is designed with the following MLOps principles in mind:
 
 ## 2. System Architecture Overview
 
-KubeSentiment is a cloud-native microservice designed for sentiment analysis. It's built to be scalable, resilient, and maintainable.
+KubeSense is a cloud-native microservice designed for sentiment analysis. It's built to be scalable, resilient, and maintainable.
 
 ```mermaid
 graph TD

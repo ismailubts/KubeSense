@@ -1,4 +1,4 @@
-# ArgoCD Configuration for KubeSentiment GitOps
+# ArgoCD Configuration for KubeSense GitOps
 # Customize ArgoCD settings for the project
 
 apiVersion: v1
@@ -13,7 +13,7 @@ data:
   # Enable Git repository credentials
   # For GitHub, you can use HTTPS with personal access token or SSH keys
   repositories: |
-    - url: https://github.com/aismail/KubeSentiment.git
+    - url: https://github.com/ismailubts/KubeSense.git
       passwordSecret:
         name: github-credentials
         key: password
@@ -23,7 +23,7 @@ data:
 
   # Repository credentials template
   repository.credentials: |
-    - url: https://github.com/aismail
+    - url: https://github.com/ismailubts
       passwordSecret:
         name: github-credentials
         key: password

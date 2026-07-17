@@ -1,6 +1,6 @@
 # Code Quality Standards and Automation
 
-This document outlines the code quality standards, automated checks, and quality gates enforced in the KubeSentiment project.
+This document outlines the code quality standards, automated checks, and quality gates enforced in the KubeSense project.
 
 ## Table of Contents
 

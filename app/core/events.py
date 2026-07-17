@@ -235,13 +235,13 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
             logger.error("Shadow mode service initialization failed", error=str(e), exc_info=True)
 
     # Initialize Advanced Metrics Collector
-    if settings.advanced_metrics_enabled:
+    if settings.monitoring.advanced_metrics_enabled:
         try:
             from app.monitoring.advanced_metrics import initialize_advanced_metrics_collector
 
             metrics_collector = initialize_advanced_metrics_collector(
-                enable_detailed_tracking=settings.advanced_metrics_detailed_tracking,
-                cost_per_1k_predictions=settings.advanced_metrics_cost_per_1k,
+                enable_detailed_tracking=settings.monitoring.advanced_metrics_detailed_tracking,
+                cost_per_1k_predictions=settings.monitoring.advanced_metrics_cost_per_1k,
             )
             logger.info("Advanced Metrics Collector initialized")
             app.state.metrics_collector = metrics_collector

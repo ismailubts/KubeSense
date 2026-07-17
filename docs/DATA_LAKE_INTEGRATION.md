@@ -2,7 +2,7 @@
 
 ## Overview
 
-KubeSentiment now supports streaming all predictions to cloud storage (S3, GCS, Azure Blob) in Parquet format for long-term analytics and ML research. This enables integration with query engines like AWS Athena, Google BigQuery, and Azure Synapse for powerful data analysis.
+KubeSense now supports streaming all predictions to cloud storage (S3, GCS, Azure Blob) in Parquet format for long-term analytics and ML research. This enables integration with query engines like AWS Athena, Google BigQuery, and Azure Synapse for powerful data analysis.
 
 ## Features
 
@@ -417,7 +417,7 @@ ORDER BY 1, 2;
 
 3. Check application logs for errors:
    ```bash
-   kubectl logs -f deployment/kubesentiment | grep "data lake"
+   kubectl logs -f deployment/KubeSense | grep "data lake"
    ```
 
 ### High latency
@@ -445,14 +445,14 @@ Kubernetes deployment with data lake enabled:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubesentiment
+  name: KubeSense
 spec:
   template:
     spec:
-      serviceAccountName: kubesentiment-sa  # With IAM role
+      serviceAccountName: KubeSense-sa  # With IAM role
       containers:
       - name: api
-        image: kubesentiment:latest
+        image: KubeSense:latest
         env:
         - name: MLOPS_DATA_LAKE_ENABLED
           value: "true"

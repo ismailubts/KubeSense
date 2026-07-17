@@ -1,5 +1,5 @@
 """
-Model Drift Detection for KubeSentiment.
+Model Drift Detection for KubeSense.
 
 This module provides comprehensive drift detection capabilities:
 - Data drift detection (input distribution changes)

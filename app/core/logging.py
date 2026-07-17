@@ -232,7 +232,7 @@ def get_logger(name: str) -> structlog.stdlib.BoundLogger:
     return structlog.get_logger(name)
 
 
-def get_contextual_logger(name: str, **extra_context) -> structlog.stdlib.BoundLogger:
+def get_contextual_logger(name: Any, **extra_context) -> structlog.stdlib.BoundLogger:
     """Retrieves a logger with additional, permanently bound context.
 
     This function is useful for creating loggers that will include specific
@@ -241,19 +241,23 @@ def get_contextual_logger(name: str, **extra_context) -> structlog.stdlib.BoundL
     task or user.
 
     Args:
-        name: The name of the logger, typically the module's `__name__`.
+        name: Logger name (`__name__`) or an existing structlog logger instance.
         **extra_context: Keyword arguments to be bound to the logger's context.
 
     Returns:
         A `structlog` logger with the specified context permanently bound to it.
     """
-    logger = structlog.get_logger(name)
+    if isinstance(name, str):
+        log = structlog.get_logger(name)
+    else:
+        # Call sites sometimes pass an existing BoundLogger
+        log = name
 
     correlation_id = get_correlation_id()
     if correlation_id:
         extra_context["correlation_id"] = correlation_id
 
-    return logger.bind(**extra_context) if extra_context else logger
+    return log.bind(**extra_context) if extra_context else log
 
 
 # Global logger instance for convenience in simple cases

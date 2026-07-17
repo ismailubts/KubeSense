@@ -1,6 +1,6 @@
-# Chaos Engineering for KubeSentiment
+# Chaos Engineering for KubeSense
 
-Comprehensive chaos engineering implementation for testing the resilience, reliability, and fault tolerance of the KubeSentiment MLOps sentiment analysis service.
+Comprehensive chaos engineering implementation for testing the resilience, reliability, and fault tolerance of the KubeSense MLOps sentiment analysis service.
 
 ## Overview
 
@@ -615,4 +615,4 @@ For issues or questions:
 
 ## License
 
-This chaos engineering implementation is part of the KubeSentiment project.
+This chaos engineering implementation is part of the KubeSense project.
