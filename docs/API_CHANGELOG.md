@@ -363,4 +363,4 @@ N/A - Initial release
 ---
 
 **Last Updated:** 2025-11-19
-**Maintainer:** Aismail <aismail@7kingscode.com>
+**Maintainer:** Abdul Ismail

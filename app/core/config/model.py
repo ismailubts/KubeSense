@@ -33,6 +33,12 @@ class ModelConfig(BaseSettings):
         min_length=1,
         max_length=200,
     )
+    model_revision: str = Field(
+        default="main",
+        description="Hugging Face model revision or branch to pin downloads",
+        min_length=1,
+        max_length=100,
+    )
     allowed_models: List[str] = Field(
         default_factory=lambda: [
             "distilbert-base-uncased-finetuned-sst-2-english",

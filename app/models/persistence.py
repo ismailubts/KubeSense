@@ -16,6 +16,7 @@ from typing import Any, Dict, Optional, Tuple
 import onnxruntime as ort
 from transformers import AutoTokenizer
 
+from app.core.config import get_settings
 from app.core.logging import get_logger
 
 logger = get_logger(__name__)

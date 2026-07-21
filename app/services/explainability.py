@@ -14,6 +14,7 @@ from typing import Dict, Optional, Any
 import torch
 from transformers import AutoTokenizer
 
+from app.core.config import get_settings
 from app.core.logging import get_logger
 from app.interfaces.explainability_interface import IExplainabilityEngine
 
@@ -74,7 +75,11 @@ class ExplainabilityEngine(IExplainabilityEngine):
         # Initialize tokenizer
         if tokenizer is None and enabled:
             try:
-                self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+                settings = get_settings()
+                self.tokenizer = AutoTokenizer.from_pretrained(
+                    model_name,
+                    revision=settings.model.model_revision,
+                )
             except Exception as e:
                 logger.error("Failed to load tokenizer", error=str(e), exc_info=True)
                 self.enabled = False

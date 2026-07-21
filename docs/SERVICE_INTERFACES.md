@@ -416,4 +416,4 @@ def my_function(service: IPredictionService):
 
 **Last Updated**: 2025-11-14
 **Version**: 1.0
-**Author**: Aismail <aismail@7kingscode.com>
+**Author**: Abdul Ismail

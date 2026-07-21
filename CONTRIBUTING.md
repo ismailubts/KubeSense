@@ -2,7 +2,7 @@
 
 Thanks for your interest in contributing. This guide covers setup, quality checks, and the pull request process for KubeSense.
 
-**Maintainer:** Aismail · [aismail@7kingscode.com](mailto:aismail@7kingscode.com)
+**Maintainer:** Abdul Ismail · https://github.com/ismailubts
 
 ## How Can I Contribute?
 

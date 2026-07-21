@@ -37,6 +37,7 @@ class ONNXModelOptimizer:
         opset_version: int = 14,
         quantize: bool = False,
         optimize_graph: bool = True,
+        revision: str = "main",
     ) -> str:
         """Export a Hugging Face model to ONNX format.
 
@@ -73,8 +74,15 @@ class ONNXModelOptimizer:
             )
 
             # Load model and tokenizer (use FastTokenizer for better performance)
-            model = AutoModelForSequenceClassification.from_pretrained(model_name)
-            tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+            model = AutoModelForSequenceClassification.from_pretrained(
+                model_name,
+                revision=revision,
+            )
+            tokenizer = AutoTokenizer.from_pretrained(
+                model_name,
+                revision=revision,
+                use_fast=True,
+            )
 
             # Create output directory
             output_dir = Path(output_path)

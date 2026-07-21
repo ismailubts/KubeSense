@@ -491,6 +491,6 @@ The following files have been updated to reference consolidated configuration do
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** Aismail <aismail@7kingscode.com>
+**Maintained By:** Abdul Ismail
 
 For detailed information on any topic, see the linked documents above.

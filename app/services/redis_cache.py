@@ -7,7 +7,7 @@ feature vectors, to improve performance and reduce latency across multiple
 service instances.
 """
 
-import pickle
+import json
 import time
 from contextlib import contextmanager
 from typing import Any, Optional
@@ -96,7 +96,7 @@ class RedisCacheClient(ICacheClient):
                 value = self.client.get(namespaced_key)
             if value:
                 record_redis_cache_hit(cache_type)
-                return pickle.loads(value)
+                return json.loads(value.decode("utf-8"))
             record_redis_cache_miss(cache_type)
             return None
         except RedisError as e:
@@ -120,7 +120,7 @@ class RedisCacheClient(ICacheClient):
         """
         namespaced_key = self._make_key(key, cache_type)
         try:
-            serialized_value = pickle.dumps(value)
+            serialized_value = json.dumps(value).encode("utf-8")
             with self._measure_operation("set"):
                 self.client.set(namespaced_key, serialized_value, ex=ttl)
             return True

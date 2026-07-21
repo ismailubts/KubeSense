@@ -2,7 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2025-12-13
-**Authors:** Aismail <aismail@7kingscode.com>
+**Authors:** Abdul Ismail
 **Supersedes:** N/A
 
 ## Context

@@ -37,7 +37,7 @@ class ServerConfig(BaseSettings):
 
     # Server configuration
     host: str = Field(
-        default="0.0.0.0",
+        default="127.0.0.1",
         description="Server host",
         pattern=r"^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|localhost|0\.0\.0\.0)$",
     )

@@ -610,4 +610,4 @@ If you encounter any issues, please open a GitHub issue with:
 ---
 
 **Last Updated:** 2025-11-19
-**Maintainer:** Aismail <aismail@7kingscode.com>
+**Maintainer:** Abdul Ismail

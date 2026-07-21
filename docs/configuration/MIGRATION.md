@@ -611,4 +611,4 @@ ValueError: Model 'my-model' must be in allowed_models list
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** Aismail <aismail@7kingscode.com>
+**Maintained By:** Abdul Ismail

@@ -243,4 +243,4 @@ The modular approach allows you to optimize for your specific deployment scenari
 ---
 
 **Last Updated:** 2025-11-14
-**Maintained By:** Aismail <aismail@7kingscode.com>
+**Maintained By:** Abdul Ismail

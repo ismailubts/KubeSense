@@ -197,6 +197,7 @@ class ONNXSentimentAnalyzer(BaseModelMetrics):
             if (self.model_path / "tokenizer_config.json").exists():
                 self._tokenizer = AutoTokenizer.from_pretrained(
                     str(self.model_path),
+                    revision=self.settings.model.model_revision,
                     use_fast=True,
                 )
                 logger.info("Loaded tokenizer from model directory")
@@ -204,6 +205,7 @@ class ONNXSentimentAnalyzer(BaseModelMetrics):
                 # Fall back to downloading tokenizer for the model
                 self._tokenizer = AutoTokenizer.from_pretrained(
                     self.settings.model.model_name,
+                    revision=self.settings.model.model_revision,
                     cache_dir=self.settings.model.model_cache_dir,
                     use_fast=True,
                 )

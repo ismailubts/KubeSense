@@ -300,8 +300,12 @@ class StreamProcessor(IStreamProcessor):
         # Save scaler state after processing
         try:
             self.online_scaler.save_state(str(self.scaler_state_path))
-        except Exception:
-            pass  # Logging already handled in FeatureProcessor
+        except Exception as exc:
+            self.logger.debug(
+                "Failed to save scaler state",
+                error=str(exc),
+                path=str(self.scaler_state_path),
+            )
 
     def _finalize_batch_processing(
         self,

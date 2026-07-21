@@ -9,8 +9,8 @@
 
 ## Reporting a Vulnerability
 
-Please report security issues privately to **Aismail** at
-[aismail@7kingscode.com](mailto:aismail@7kingscode.com).
+Please report security issues privately to **Abdul Ismail** via
+[GitHub Security Advisories](https://github.com/ismailubts/KubeSense/security).
 
 Do not open public GitHub issues for vulnerabilities that could expose users or
 infrastructure. You can expect an initial response within a few business days.

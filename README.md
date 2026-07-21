@@ -1,16 +1,12 @@
 # KubeSense
 
-### by Aismail
+### by Abdul Ismail
 
 Production MLOps sentiment API — DistilBERT on FastAPI, ready for Kubernetes.
 
-[![CI](https://img.shields.io/badge/CI-passing-0ea5e9.svg)](https://github.com/ismailubts/KubeSense/actions)
-[![Version](https://img.shields.io/badge/version-1.0.0-38bdf8.svg)](https://github.com/ismailubts/KubeSense/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-22c55e.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![Contact](https://img.shields.io/badge/contact-aismail%407kingscode.com-6366f1.svg)](mailto:aismail@7kingscode.com)
+[![License](https://img.shields.io/badge/license-Proprietary-blue.svg)](LICENSE)
 
-**Author:** [Aismail](https://github.com/ismailubts) · **Email:** [aismail@7kingscode.com](mailto:aismail@7kingscode.com) · **Repo:** [github.com/ismailubts/KubeSense](https://github.com/ismailubts/KubeSense)
+**Author:** [Abdul Ismail](https://github.com/ismailubts) · **Repository:** [github.com/ismailubts/KubeSense](https://github.com/ismailubts/KubeSense)
 
 ---
 
@@ -33,7 +29,7 @@ KubeSense is a cloud-native microservice for real-time and batch sentiment infer
 ```mermaid
 flowchart LR
   Clients -->|HTTP| Ingress
-  Ingress --> API[FastAPI · Aismail]
+  Ingress --> API[FastAPI · Abdul Ismail]
   API --> Model[ONNX / PyTorch]
   API --> Redis[(Redis)]
   API --> Kafka[[Kafka]]
@@ -152,12 +148,12 @@ Full guide: [docs/setup/QUICKSTART.md](docs/setup/QUICKSTART.md)
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md). Use Conventional Commits; run `make lint` and `make test` before opening a PR.
 
-**Maintainer:** Aismail · [aismail@7kingscode.com](mailto:aismail@7kingscode.com)
+**Maintainer:** Abdul Ismail · https://github.com/ismailubts
 
 ---
 
 ## License
 
-MIT — [LICENSE](LICENSE)
+Proprietary — [LICENSE](LICENSE)
 
-Copyright (c) 2025–2026 **Aismail**.
+Copyright (c) Abdul Ismail. All rights reserved.
