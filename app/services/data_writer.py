@@ -415,8 +415,12 @@ class DataLakeWriter(IDataWriter):
         loop = asyncio.get_event_loop()
         try:
             await loop.run_in_executor(None, container_client.create_container)
-        except Exception:
-            pass  # Container likely already exists
+        except Exception as exc:
+            self.logger.debug(
+                "Azure container creation skipped or failed",
+                error=str(exc),
+                path=path,
+            )
 
         blob_client = container_client.get_blob_client(path)
         await loop.run_in_executor(

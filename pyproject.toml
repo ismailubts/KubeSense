@@ -1,10 +1,8 @@
 [project]
 name = "kubesense"
 version = "1.0.0"
-description = "Cloud-native MLOps sentiment analysis microservice by Aismail"
-authors = [{ name = "Aismail", email = "aismail@7kingscode.com" }]
-maintainers = [{ name = "Aismail", email = "aismail@7kingscode.com" }]
-license = { text = "MIT" }
+description = "Cloud-native MLOps sentiment analysis microservice by Abdul Ismail"
+authors = [{ name = "Abdul Ismail" }]
 readme = "README.md"
 requires-python = ">=3.11"
 urls = { Homepage = "https://github.com/ismailubts/KubeSense", Repository = "https://github.com/ismailubts/KubeSense" }

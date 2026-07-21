@@ -660,4 +660,4 @@ for name, info in profiles.items():
 ---
 
 **Last Updated:** 2025-11-25
-**Maintained By:** Aismail <aismail@7kingscode.com>
+**Maintained By:** Abdul Ismail

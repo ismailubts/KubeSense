@@ -285,4 +285,4 @@ rate(http_requests_total{deprecated="true"}[5m])
 ---
 
 **Last Updated:** 2025-10-30
-**Maintained By:** Aismail <aismail@7kingscode.com>
+**Maintained By:** Abdul Ismail

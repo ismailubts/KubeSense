@@ -59,4 +59,4 @@ See [QUICK_WINS_FEATURES.md](../docs/QUICK_WINS_FEATURES.md) for complete docume
 
 ## License
 
-MIT
+Proprietary — see LICENSE.

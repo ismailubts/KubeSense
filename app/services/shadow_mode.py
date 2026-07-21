@@ -14,7 +14,7 @@ This is a key MLOps pattern for:
 """
 
 import asyncio
-import random
+import secrets
 import time
 from typing import Any
 
@@ -161,7 +161,7 @@ class ShadowModeService:
         if not self.enabled or self.shadow_model is None:
             return False
 
-        return random.random() * 100 < self.settings.mlops.shadow_traffic_percentage
+        return secrets.randbelow(10000) / 100.0 < self.settings.mlops.shadow_traffic_percentage
 
     async def dispatch_shadow_prediction(
         self,
